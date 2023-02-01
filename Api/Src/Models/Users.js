@@ -1,9 +1,7 @@
 const { Schema, model, models } = require('mongoose');
 
-// const Category = require("./category.js");
-// const Brand = require("./brand.js");
-// const Review = require("./review.js"); //Si se borra no funcionará .populate para los arreglos...
-// const Question = require("./question.js");
+const Cars = require("./Cars.js");
+
 
 const users = new Schema(
     {
