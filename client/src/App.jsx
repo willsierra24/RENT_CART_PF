@@ -1,11 +1,14 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
 import "./App.css";
+import RouteApp from "./routes/RouteApp";
+import Footer from "./Footer/Footer";
+import NavBar from  './NavBar/NavBar'
 
 function App() {
   return (
     <>
-      <h1>¡BIENVENIDO A RENT CAR!</h1>
+      <NavBar/>
+      <RouteApp />
+      <Footer />
     </>
   );
 }
