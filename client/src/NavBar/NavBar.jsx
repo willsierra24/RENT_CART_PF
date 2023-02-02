@@ -21,14 +21,19 @@ function NavBar() {
     </>
   );
 }
+
+
 export const ContainerStyled = styled.div`
   width: 100%;
   height: 54px;
-  background: #1d1c1d;
+  background: #354F52;
   display: flex;
   justify-content: space-around;
   align-items: center;
   font-size: 20px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
 
   a {
     text-decoration: none;
@@ -47,19 +52,19 @@ export const ListStyled = styled(NavLink)`
   padding-left: 15px;
   padding-right: 20px;
   text-decoration: none;
-  color: #ffbb00da;
+  color: #84A98C; 
 
   :hover {
-    background: #b0920c;
+    background: #84A98C;
     border-radius: 5px;
     color: white;
   }
 `;
 
 const ButtonStyled = styled.button`
-  background-color: #ffbb00da;
+  background-color: #84A98C;
   border-radius: 5px;
-  border: 1px solid #ffbb00da;
+  border: 1px solid #84A98C;
   padding: 5px;
   color: black;
   cursor: pointer;

@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import NotFound from "../pages/NotFound/NotFound";
 import About from "../pages/About/About";
+import Home from "../Components/Home/Home";
 
 function RouteApp() {
   return (
@@ -9,8 +10,8 @@ function RouteApp() {
       <Routes>
         {/* <Route exact path="/" element={<LandingPage />} /> */}
         <Route exact path="about" element={<About />} />
-        {/* <Route exact path="home" element={<Home />} />          
-          <Route exact path="details/:id" element={<Details />} />
+        <Route exact path="home" element={<Home />} />          
+        {/*  <Route exact path="details/:id" element={<Details />} />
           <Route exact path="create" element={<Create />} />
           <Route exact path="fleet" element={<Fleet />} />
           <Route exact path="offers" element={<Offers />} />
