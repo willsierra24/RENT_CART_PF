@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './Home.css'
 import Cards from '../Cards/Cards';
 import Pagination from '../Pagination/Pagination'
+import { Filter } from '../filtro/Filter';
 
 
 export default function Home () {  
@@ -45,6 +46,7 @@ export default function Home () {
 				total={cars.length}
 				paginate={paginate}
 			/> 
+            <Filter/>
             </div>            
         </React.Fragment>
     )    
