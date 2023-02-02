@@ -1,8 +1,9 @@
 import React from "react";
+import './Footer.css';
 function Footer() {
   return (
     <>
-      <h1>Copyright © 2023 Rent Car. Todos los derechos reservados</h1>
+      <h1 className="footer">Copyright © 2023 Rent Car. All rights reserved</h1>
     </>
   );
 }
