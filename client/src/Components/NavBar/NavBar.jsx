@@ -8,31 +8,28 @@ function NavBar() {
       <ContainerStyled>
         <a href="/home">RENT CAR</a>
         <NavStyled>
-          <ListStyled to="/home">Home</ListStyled>
-          <ListStyled to="/offers">Promociones</ListStyled>
-          <ListStyled to="/fleet">Flota</ListStyled>
-          <ListStyled to="/about">Sobre nosotros</ListStyled>
-          <ListStyled to="/contac">Contacto</ListStyled>
-          <ListStyled to="/blog">Blog</ListStyled>
+          <ListStyled to="/home">HOME</ListStyled>
+          <ListStyled to="/about">ABOUT US</ListStyled>
+          <ListStyled to="/contact">CONTACT</ListStyled>
         </NavStyled>
-        <ButtonStyled>Ingresar</ButtonStyled>
+        <button>LOGIN</button>
       </ContainerStyled>
       <Outlet />
     </>
   );
 }
+
 export const ContainerStyled = styled.div`
   width: 100%;
   height: 54px;
-  background: #1d1c1d;
+  background: #023047;
   display: flex;
   justify-content: space-around;
   align-items: center;
   font-size: 20px;
-
-  a {
-    text-decoration: none;
-  }
+  position: absolute;
+  top: 0px;
+  left: 0px;
 `;
 
 export const NavStyled = styled.nav`
@@ -47,21 +44,12 @@ export const ListStyled = styled(NavLink)`
   padding-left: 15px;
   padding-right: 20px;
   text-decoration: none;
-  color: #ffbb00da;
+  color: #fff;
 
   :hover {
-    background: #b0920c;
     border-radius: 5px;
-    color: white;
+    color: #ffb703;
   }
 `;
 
-const ButtonStyled = styled.button`
-  background-color: #ffbb00da;
-  border-radius: 5px;
-  border: 1px solid #ffbb00da;
-  padding: 5px;
-  color: black;
-  cursor: pointer;
-`;
 export default NavBar;
