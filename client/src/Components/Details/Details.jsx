@@ -12,4 +12,4 @@ const {state} = useLocation();
       <h1>{state.price} </h1>
     </div>
   )
-}
+} 
