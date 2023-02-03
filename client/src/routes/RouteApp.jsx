@@ -4,6 +4,8 @@ import NotFound from "../pages/NotFound/NotFound";
 import About from "../pages/About/About";
 import Home from "../Components/Home/Home";
 import LandingPage from "../Components/LandingPage/LandingPage";
+import Contact from "../pages/Contact/Contact";
+import FaqSection from "../pages/FaqSection/FaqSection";
 
 function RouteApp() {
   return (
@@ -11,17 +13,15 @@ function RouteApp() {
       <Routes>
         <Route exact path="/" element={<LandingPage />} />
         <Route exact path="about" element={<About />} />
-        <Route exact path="home" element={<Home />} />          
-        {/*  <Route exact path="details/:id" element={<Details />} />
-          <Route exact path="create" element={<Create />} />
-          <Route exact path="fleet" element={<Fleet />} />
-          <Route exact path="offers" element={<Offers />} />
-          <Route  exact path="contact" element={<Contac />} />
-          <Route exact path="blog" element={<Blog />} /> */}
+        <Route exact path="home" element={<Home />} />
+        <Route exact path="contact" element={<Contact />} />
+        <Route exact path="faq" element={<FaqSection />} />
+        {/* <Route exact path="details/:id" element={<Details />} /> */}
+
         <Route exact path="*" element={<NotFound />} />
       </Routes>
     </>
   );
 }
 
-export default RouteApp
+export default RouteApp;
