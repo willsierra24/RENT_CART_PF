@@ -8,7 +8,7 @@ import './Cards.css';
 function Cards({cars}) {
 	return (	
 		<div>
-			<h1 className="tittleCar">list of cars</h1>
+			<h1 className="tittleCar">Cars</h1>
 			<div className="cards">	
 				{cars.length > 0 ?
 				cars.map((car) => (<Card car={car} />))
