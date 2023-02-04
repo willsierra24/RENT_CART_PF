@@ -1,18 +1,38 @@
-
-.filtro {
+#ilteredout{
+    background-color: #ffb703;
+    color: rgb(0, 0, 100);
     position: absolute;
-    top: 400px;
-    left: 1600px;}
-.filtroSeleccionarCaja, .filtroSeleccionarLista{
-    background-color: rgb(250, 192, 186);
-    border: none;
-    width: 200px;
-    height: 20px;
-}
-.filtroSeleccionarCaja{ 
-    width: 196px;
-    height: 20px;
-}
-#filtroT{
+    top: 30px;
+    left: -20%;
     font-weight: bold;
+    font-size: 130%;
+    width: 300px;
+    height: 500px;
+}
+.filt{
+    width: 18%;
+    height: 700px;
+    position: relative;
+    top: 130px;
+    left: 40px;
+    border-top: 1px solid #cacacacc;
+    border-right: 1px solid #cacacacc;
+    border-radius: 0px 3px 0px 0px;
+}
+.item{
+color: #003566;
+font-weight: bold;
+cursor: pointer;
+}
+.filtimg{
+    width: 100px;
+}
+.item,.item2{
+    margin: 15px 0px 0px 15px;
+}
+.item2{
+    color: #fb8500;
+    font-weight: bold;
+    display: grid;
+	grid-template-columns: [x0] 1fr [x1] 1fr;
 }

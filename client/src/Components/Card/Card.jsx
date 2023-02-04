@@ -4,16 +4,37 @@ import {Link} from 'react-router-dom';
 
 const Card = ({car}) => {
   return (
-    <Link to={`/detail/${car.id_license_plare}`} state={car} className = 'link'>
-		<div className='card'>
-      <div className='texts'>		      
-        <div className='text'>{car.name}</div>
-        <div className='text2'>AUT 5P A/C  </div>	
-        <div className='text3'>US$ {car.price}</div>	
+    
+		<div className='cardd'>
+      <div></div>
+      <div>
+        <div className='start'>★★★☆☆</div>
+        <img className='img' src={car.image} alt={"No"} />
       </div>
-      <img className='img' src={car.image} alt={"No"} />
+  
+      <div className='texts'>		      
+        <div className='text1'>{car.brand}-{car.line}</div>
+        <div className='text2'>Category: {car.category} </div>	
+        <div className='text2'>Transmision: {car.typeOfBox} </div>	
+        <div className='text2'>doors: {car.doors}  </div>	
+        <div className='text2'>Fuel Type: {car.fuelType}  </div>	
+        <div className='text3'>US$ {car.preci}</div>	
+      </div>
+
+      <div className='cardPart3'>
+        <div></div>
+        <div className='Desc'>discount</div>
+        <div className='DescVal'>{car.discount}%</div>
+        <div></div>
+        <Link to={`/detail/${car.licensePlate}`} state={car} className = 'link'>
+        <button> Details </button>
+        </Link>	
+        <div></div>
+      </div>
+      <div>
+      <div className='heart'>♡</div>
+      </div>
 		</div>
-      </Link>	
   )
 }
 
