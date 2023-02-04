@@ -4,6 +4,7 @@ const carSchema = mongoose.Schema({
   licensePlate: {
     type: String,
     required: true,
+    unique: true,
     minLength: 3,
     maxLength: 10,
   },
@@ -29,7 +30,7 @@ const carSchema = mongoose.Schema({
     enum: ["valid", "invalid"],
     default: "valid",
   },
-  preci: {
+  price: {
     type: Number,
     required: true,
     minLength: 1,
