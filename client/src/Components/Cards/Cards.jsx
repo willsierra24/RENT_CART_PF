@@ -5,10 +5,10 @@ import './Cards.css';
 
 
 
-function Cards({cars}) {
+function Cards({cars,ttFilt}) {
 	return (	
 		<div>
-			<h1 className="tittleCar">Cars</h1>
+			<h1 className="tittleCar">Cars ({ttFilt})</h1>
 			<div className="cards">	
 				{cars.length > 0 ?
 				cars.map((car) => (<Card car={car} />))
