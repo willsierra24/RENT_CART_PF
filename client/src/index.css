@@ -1,4 +1,4 @@
- :root {
+:root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 24px;
@@ -42,10 +42,15 @@ a {
 }
 
 a:hover {
-  color: #ffb703; 
-
-  
+  color: #ffb703;   
 }
+
+a.active{
+  color: #FFB703;
+}
+
+
+
 
 
 
