@@ -46,12 +46,12 @@ router.get("/:id", (req, res) => {
 /* This is a put request that is updating the data from the database. */
 router.put("/:id", (req, res) => {
   const { id } = req.params;
-  const { name, price, description, image, discount } = req.body;
+  const { name, preci, description, image, discount } = req.body;
   accessoriesSchema
 
     .updateOne(
       { _id: id },
-      { $set: { name, price, description, image, discount } }
+      { $set: { name, preci, description, image, discount } }
     )
     .populate("review", { description: 1, rate: 1 })
     .then((data) => res.json(data))
