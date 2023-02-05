@@ -1,0 +1,40 @@
+#ilteredout{
+    background-color: #ffb703;
+    color: rgb(0, 0, 100);
+    position: absolute;
+    top: 30px;
+    left: -20%;
+    font-weight: bold;
+    font-size: 130%;
+    width: 300px;
+    height: 500px;
+}
+.filt{
+    width: 18%;
+    height: 700px;
+    position: relative;
+    top: 130px;
+    left: 40px;
+    border-top: 1px solid #cacacacc;
+    border-right: 1px solid #cacacacc;
+    border-radius: 0px 3px 0px 0px;
+}
+.item{
+color: #003566;
+font-weight: bold;
+cursor: pointer;
+}
+.filtimg, .filtimgF{
+    width: 100px;
+}.filtimgF{
+    opacity: 0.3;
+}
+.item,.item2{
+    margin: 15px 0px 0px 15px;
+}
+.item2{
+    color: #fb8500;
+    font-weight: bold;
+    display: grid;
+	grid-template-columns: [x0] 1fr [x1] 1fr;
+}

@@ -1,0 +1,30 @@
+.pagination {
+    position: absolute;
+    top: 1750%;
+	bottom: 0;
+	background: transparent;
+    color: #ffffff;
+	width: 90%;
+    height: 100px;
+	display: flex;
+}
+.pagine{
+    color: #023047;    
+}
+.item button{
+    color: #023047;
+    background-color: transparent;
+    border: none;
+    font-size: 15px;
+    width: 23px;
+    height: 18px;
+    margin: 5px;
+}
+
+.item button:hover {
+    cursor: pointer;
+    color: #ffb703;
+    font-size: 110%;
+    text-shadow: 0 0 5px #fff;   
+    background-color: white; 
+}
