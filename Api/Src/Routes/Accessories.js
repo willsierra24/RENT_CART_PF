@@ -51,7 +51,7 @@ router.put("/:id", (req, res) => {
 
     .updateOne(
       { _id: id },
-      { $set: { name, preci, description, image, discount } }
+      { $set: { name, price, description, image, discount } }
     )
     .populate("review", { description: 1, rate: 1 })
     .then((data) => res.json(data))
