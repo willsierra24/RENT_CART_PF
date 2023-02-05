@@ -50,7 +50,7 @@ export const ContainerStyled = styled.div`
   color: #023047;
   position: absolute;
   width: 100%;
-  top: 96%;
+  top: 100vw;
   left: 0;
   align-items: center;
   font-size: 20px;
