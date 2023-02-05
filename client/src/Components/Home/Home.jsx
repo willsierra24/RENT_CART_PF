@@ -38,7 +38,6 @@ export default function Home() {
       //----filter discount----
       filt4.map((objCar)=>{xclude[4].includes(objCar.discount)? null: filt5.push(objCar)})
       setarCar (filt5);
-     console.log(arCar=arCar)
 
 	}
   
@@ -54,7 +53,7 @@ export default function Home() {
     <div className="Filteredout">Filtered out</div>
       <NavBar />
       <div className="homen">
-        <Cards cars={carPag} />
+        <Cards cars={carPag} ttFilt = {arCar.length}/>
         <Pagination total={arCar.length} paginate={paginate} />
       </div>
       <Footer />
