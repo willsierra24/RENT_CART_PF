@@ -8,7 +8,7 @@ const accessoriesSchema = mongoose.Schema({
     minLength: 3,
     maxLength: 50,
   },
-  preci: {
+  price: {
     type: Number,
     required: true,
     minLength: 1,

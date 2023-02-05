@@ -46,7 +46,7 @@ router.get("/:id", (req, res) => {
 /* This is a put request that is updating the data from the database. */
 router.put("/:id", (req, res) => {
   const { id } = req.params;
-  const { name, preci, description, image, discount } = req.body;
+  const { name, price, description, image, discount } = req.body;
   accessoriesSchema
 
     .updateOne(
