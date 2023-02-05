@@ -11,13 +11,25 @@ router.post("/", (req, res) => {
     .catch((error) => res.json({ message: error }));
 });
 
-/* This is a get request that is getting the data from the database. */
-router.get("/", (req, res) => {
-  accessoriesSchema
+router.get("/", async (req, res) => {
+  const { name } = req.query;
+  const accessories = await accessoriesSchema
     .find()
-    .populate("review", { description: 1, rate: 1 })
-    .then((data) => res.json(data))
-    .catch((error) => res.json({ message: error }));
+    .populate("review", { description: 1, rate: 1, user: 1 });
+  try {
+    if (name) {
+      let accessorieName = accessories.filter((accessorie) =>
+        accessorie.name.toLowerCase().includes(name.toLowerCase())
+      );
+      accessorieName.length
+        ? res.status(200).json(accessorieName)
+        : res.status(201).json("Not found");
+    } else {
+      res.status(200).json(accessories);
+    }
+  } catch (error) {
+    res.send(`Error ${error}`);
+  }
 });
 
 /* This is a get request that is getting the data from the database. */

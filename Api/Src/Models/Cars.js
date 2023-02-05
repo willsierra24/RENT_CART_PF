@@ -29,7 +29,7 @@ const carSchema = mongoose.Schema({
     enum: ["valid", "invalid"],
     default: "valid",
   },
-  preci: {
+  price: {
     type: Number,
     required: true,
     minLength: 1,
@@ -57,12 +57,13 @@ const carSchema = mongoose.Schema({
       type: String,
       required: true,
       minLength: 3,
-      maxLength: 15,
+      maxLength: 18,
     },
   ],
   discount: {
     type: Number,
     default: 0,
+    minLength: 0,
     maxLength: 99,
   },
   doors: {
@@ -72,7 +73,7 @@ const carSchema = mongoose.Schema({
   line: {
     type: String,
     required: true,
-    minLength: 3,
+    minLength: 2,
     maxLength: 50,
   },
   category: {
