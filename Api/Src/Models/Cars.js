@@ -4,6 +4,7 @@ const carSchema = mongoose.Schema({
   licensePlate: {
     type: String,
     required: true,
+    unique: true,
     minLength: 3,
     maxLength: 10,
   },
