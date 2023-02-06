@@ -1,8 +1,15 @@
-import React from 'react'
+import React, { useEffect } from "react";
 import {Link} from 'react-router-dom';
+import { useDispatch} from 'react-redux';
 import "./LandingPage.css"
 
+import {Cars} from '../../redux/action/index'
+
 export default function LandingPage() {
+
+  const dispatch = useDispatch();
+  useEffect(() => { dispatch(Cars());}, [dispatch]);
+
   return (
     <div className="information">
       <div class="container">
