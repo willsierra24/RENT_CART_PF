@@ -13,12 +13,25 @@ router.post("/", (req, res) => {
 });
 
 /* This is a get request that is being sent to the server. */
-router.get("/", (req, res) => {
-  carSchema
+router.get("/", async (req, res) => {
+  const { line } = req.query;
+  const cars = await carSchema
     .find()
-    .populate("review", { description: 1, rate: 1, user: 1 })
-    .then((data) => res.json(data))
-    .catch((error) => res.json({ message: error }));
+    .populate("review", { description: 1, rate: 1, user: 1 });
+  try {
+    if (line) {
+      let carsLine = cars.filter((car) =>
+        car.line.toLowerCase().includes(line.toLowerCase())
+      );
+      carsLine.length
+        ? res.status(200).json(carsLine)
+        : res.status(201).json("Not found");
+    } else {
+      res.status(200).json(cars);
+    }
+  } catch (error) {
+    res.send(`Error ${error}`);
+  }
 });
 
 /* This is a get request that is being sent to the server. */

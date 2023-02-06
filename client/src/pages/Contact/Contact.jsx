@@ -1,6 +1,6 @@
 import React from "react";
-import NavBar from "../../components/NavBar/NavBar";
-import Footer from "../../components/Footer/Footer";
+import NavBar from "../../Components/NavBar/NavBar";
+import Footer from "../../Components/Footer/Footer";
 import styled from "styled-components";
 
 function Contact() {
@@ -27,7 +27,6 @@ export const ContainerStyled = styled.div`
   justify-content: center;
   align-items: center;
   align-content: center;
-  
 `;
 
 export const TitleStyled = styled.h1`

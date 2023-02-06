@@ -6,7 +6,7 @@ function NavBar() {
   return (
     <>
       <ContainerStyled>
-        <a href="/home">RENT CAR</a>
+        <a >RENT CAR</a>
         <NavStyled>
           <ListStyled to="/home">HOME</ListStyled>
           <ListStyled to="/about">ABOUT US</ListStyled>
@@ -21,7 +21,7 @@ function NavBar() {
 
 export const ContainerStyled = styled.div`
   width: 100%;
-  height: 54px;
+  height: 64px;
   background: #023047;
   display: flex;
   justify-content: space-around;
@@ -46,8 +46,7 @@ export const ListStyled = styled(NavLink)`
   text-decoration: none;
   color: #fff;
 
-  :hover {
-    border-radius: 5px;
+  &:hover {
     color: #ffb703;
   }
 `;
