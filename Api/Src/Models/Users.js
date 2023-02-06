@@ -41,6 +41,13 @@ const userSchema = mongoose.Schema({
     enum: ["admin", "user"],
     default: "user",
   },
+  dni: {
+    type: Number,
+    require: true,
+    unique: true,
+    minLength: 7,
+    maxLength: 10,
+  },
   active: {
     type: String,
     enum: ["valid", "invalid"],

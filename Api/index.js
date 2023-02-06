@@ -7,6 +7,7 @@ require("dotenv").config();
 
 const app = express();
 const port = process.env.PORT || 3001;
+
 app.use(express.json());
 
 app.use(express.urlencoded({ extended: true }));
@@ -21,8 +22,6 @@ app.use((_req, res, next) => {
   next();
 });
 
-// app.use("/", userRoutes);
-// app.use("/", reviewRoutes);
 app.use("/", router);
 app.get("/", (req, res) => {
   res.send("Welcome to PF API");
