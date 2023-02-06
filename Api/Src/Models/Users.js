@@ -14,6 +14,13 @@ const userSchema = mongoose.Schema({
     minLength: 3,
     maxLength: 50,
   },
+  dni: {
+    type: Number,
+    require: true,
+    unique: true,
+    minLength: 7,
+    maxLength:10
+  },
   kindOfPerson: {
     type: String,
     required: true,
