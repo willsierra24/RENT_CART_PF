@@ -3,23 +3,23 @@ import styled from "styled-components";
 import axios from "axios";
 
 function Search() {
-  // const [cars, setCars] = useState([]);
+  const [location, setLocation] = useState([]);
   const [search, setSearch] = useState("");
 
-  // const API_URL = "http://localhost:3001/cars";
-  // const infoApi = async () => {
-  //   try {
-  //     const data = await axios.get(API_URL);
-  //     console.log(data);
-  //     setCars(data);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
+  const API_URL = "http://localhost:3001/cars";
+  const infoApi = async () => {
+    try {
+      const { data } = await axios.get(API_URL);
+      const result = data.filter((c) => c.location.includes(search));
+      setLocation(result);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-  // React.useEffect(() => {
-  //   infoApi();
-  // }, []);
+  React.useEffect(() => {
+    infoApi();
+  }, []);
 
   function handleLocation(e) {
     setSearch(e.target.value);
@@ -27,7 +27,7 @@ function Search() {
   }
   function handleSubmit(e) {
     e.preventDefault();
-    setSearch(search);
+    setLocation(search);
   }
 
   return (
@@ -37,11 +37,11 @@ function Search() {
           <InputStyled
             type="text"
             value={search}
-            placeholder="¿Donde necesitas tu auto?"
+            placeholder="Where do you need your car?"
             onChange={(e) => handleLocation(e)}
           />
 
-          <button>Buscar</button>
+          <button>Search</button>
         </form>
       </ContainerStyled>
     </React.Fragment>
