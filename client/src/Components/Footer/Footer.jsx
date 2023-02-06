@@ -13,7 +13,7 @@ function Footer() {
           <Link to={"/about"}>
             <p>About us</p>
           </Link>
-          <Link to={"#"}>
+          <Link to={"/ourteam"}>
             <p>Our Team</p>
           </Link>
         </div>

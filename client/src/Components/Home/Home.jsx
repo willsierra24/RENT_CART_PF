@@ -5,7 +5,7 @@ import Pagination from "../Pagination/Pagination";
 import { Filter } from "../filtro/Filter";
 import Footer from "../Footer/Footer";
 import NavBar from "../NavBar/NavBar";
-import Search from "../Search/Search";
+import SearchBar from "../SearchBar/SearchBar";
 /*temporary*/ import { cars } from "../../Borrador";
 
 export default function Home() {
@@ -60,7 +60,7 @@ export default function Home() {
   let carPag = arCar.slice(since, until);
   return (
     <React.Fragment>
-      <Search />
+      <SearchBar />
       <Filter
         cars={cars}
         filterInHome={uddateForFilter}

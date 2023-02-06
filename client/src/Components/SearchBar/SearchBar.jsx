@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
-import Search from "./Search";
 
-function Search() {
+function SearchBar() {
   const [cars, setCars] = useState([]);
   const [search, setSearch] = useState("");
 
@@ -11,11 +10,11 @@ function Search() {
   const infoApi = async () => {
     try {
       const { data } = await axios.get(API_URL);
-      const result = data?.filter((c) =>
-        c.location.toLowerCase().includes(search).toLowerCase()
-      );
-    } catch (error) {
-      console.log(error);
+      const result = data?.filter((c) => c.location.includes(search));
+      console.log(result);
+      setCars((prevState) => [...prevState, result]);
+    } catch (e) {
+      console.log(e);
     }
   };
 
@@ -66,4 +65,4 @@ export const InputStyled = styled.input`
   outline: none;
   color: black;
 `;
-export default Search;
+export default SearchBar;
