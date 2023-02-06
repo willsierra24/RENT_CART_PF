@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector} from 'react-redux';
 import "./Home.css";
 import Cards from "../Cards/Cards";
@@ -7,9 +7,33 @@ import { Filter } from "../filtro/Filter";
 import Footer from "../Footer/Footer";
 import NavBar from "../NavBar/NavBar";
 import Search from "../Search/Search";
+import axios from "axios";
 
 export default function Home() {
-  let cars = useSelector((state) => state.cars);
+  
+  const [cars, setCars] = useState([]);
+  //let cars = useSelector((state) => state.cars);
+
+  const API_URL = `http://localhost:3001/cars`;
+
+  const infoApi = async () => {
+    try {
+      const { data } = await axios.get(API_URL);
+      
+      setarCar(data);
+      setCars(data);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+  
+  React.useEffect(() => {
+    infoApi();
+  }, []);
+
+  
+
+
 
   let [ordeno,setordeno]=useState ("Ascending");
   let [indexo, setindexo] =useState ("Brand")
@@ -37,6 +61,7 @@ export default function Home() {
       : xclude[index].push(obj);
     //----filter brand----
     cars.map((objCar) => {
+      console.log (objCar ,"fff")
       xclude[0].includes(objCar.brand) ? null : filt1.push(objCar);
     });
     //----filter category----
