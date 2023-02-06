@@ -10,7 +10,9 @@ function SearchBar() {
   const infoApi = async () => {
     try {
       const { data } = await axios.get(API_URL);
-      const result = data?.filter((c) => c.location.includes(search));
+      const result = data?.filter((car) =>
+        car.location.toLowerCase().includes(search.toLowerCase())
+      );
       console.log(result);
       setCars((prevState) => [...prevState, result]);
     } catch (e) {
