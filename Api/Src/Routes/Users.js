@@ -13,12 +13,32 @@ router.post("/", (req, res) => {
 });
 
 // get all users
-router.get("/", (req, res) => {
-  userSchema
+// router.get("/", (req, res) => {
+//   userSchema
+//     .find()
+//     .populate("review", { description: 1, rate: 1, car: 1 })
+//     .then((data) => res.json(data))
+//     .catch((error) => res.json({ message: error }));
+// });
+
+router.get("/", async (req, res) => {
+  const { dni } = req.query;
+
+  const users = await userSchema
     .find()
-    .populate("review", { description: 1, rate: 1, car: 1 })
-    .then((data) => res.json(data))
-    .catch((error) => res.json({ message: error }));
+    .populate("review", { description: 1, rate: 1, car: 1 });
+  try {
+    if (dni) {
+      let userDni = users.filter((user) => user.dni === Number(dni));
+      userDni.length
+        ? res.status(200).json(userDni)
+        : res.status(201).json("Not found");
+    } else {
+      res.status(200).json(users);
+    }
+  } catch (error) {
+    res.json(`Error ${error}`);
+  }
 });
 
 // get a user
