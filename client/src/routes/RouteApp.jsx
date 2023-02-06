@@ -18,7 +18,7 @@ function RouteApp() {
         <Route exact path="home" element={<Home />} />
         <Route exact path="contact" element={<Contact />} />
         <Route exact path="faq" element={<FaqSection />} />
-        <Route exact path="faq" element={<OurTeam />} />
+        <Route exact path="ourteam" element={<OurTeam />} />
         <Route exact path="detail/:id" element={<Details />} />
 
         <Route exact path="*" element={<NotFound />} />
