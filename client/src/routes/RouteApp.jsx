@@ -6,7 +6,7 @@ import Home from "../Components/Home/Home";
 import LandingPage from "../Components/LandingPage/LandingPage";
 import Contact from "../pages/Contact/Contact";
 import FaqSection from "../pages/FaqSection/FaqSection";
-import Details from "../Components/Details/Details.jsx";
+import Details from "../Components/Details/Details";
 
 function RouteApp() {
   return (

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import Footer from "../../components/Footer/Footer";
-import NavBar from "../../components/NavBar/NavBar";
+import Footer from "../../Components/Footer/Footer";
+import NavBar from "../../Components/NavBar/NavBar";
 
 function FaqSection() {
   return (

@@ -24,8 +24,10 @@ color: #003566;
 font-weight: bold;
 cursor: pointer;
 }
-.filtimg{
+.filtimg, .filtimgF{
     width: 100px;
+}.filtimgF{
+    opacity: 0.3;
 }
 .item,.item2{
     margin: 15px 0px 0px 15px;
