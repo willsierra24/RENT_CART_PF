@@ -5,8 +5,6 @@ import { NavLink, Outlet, Link } from "react-router-dom";
 import { LoginButton } from "../Auth/Login";
 import { LogoutButton } from "../Auth/Logout";
 import { Profile } from "../Auth/Profile";
-import { Link } from "react-router-dom";
-
 
 
 function NavBar() {
