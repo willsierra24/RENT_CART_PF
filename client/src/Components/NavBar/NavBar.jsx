@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, Link } from "react-router-dom";
 
 function NavBar() {
   return (
     <>
       <ContainerStyled>
-        <a >RENT CAR</a>
+        <Link to="/home">RENT CAR</Link>
         <NavStyled>
           <ListStyled to="/home">HOME</ListStyled>
           <ListStyled to="/about">ABOUT US</ListStyled>

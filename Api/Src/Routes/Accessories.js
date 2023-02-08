@@ -11,6 +11,7 @@ router.post("/", (req, res) => {
     .catch((error) => res.json({ message: error }));
 });
 
+/* This is a get request that is getting the data from the database. */
 router.get("/", async (req, res) => {
   const { name } = req.query;
   const accessories = await accessoriesSchema
