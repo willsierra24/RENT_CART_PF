@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { getAllCars } from "../../redux/actions/actions";
 import "./Home.css";
 import Cards from "../Cards/Cards";
 import Pagination from "../Pagination/Pagination";
@@ -7,28 +8,29 @@ import { Filter } from "../filtro/Filter";
 import Footer from "../Footer/Footer";
 import NavBar from "../NavBar/NavBar";
 import Search from "../Search/Search";
-import axios from "axios";
+// import axios from "axios";
 
 export default function Home() {
-  const [cars, setCars] = useState([]);
-  //let cars = useSelector((state) => state.cars);
+  // const [cars, setCars] = useState([]);
+  const dispatch = useDispatch();
+  const cars = useSelector((state) => state.cars);
 
-  const API_URL = `http://localhost:3001/cars`;
+  useEffect(() => {
+    dispatch(getAllCars());
+  }, [dispatch]);
 
-  const infoApi = async () => {
-    try {
-      const { data } = await axios.get(API_URL);
+  // const API_URL = `http://localhost:3001/cars`;
 
-      setarCar(data);
-      setCars(data);
-    } catch (e) {
-      console.log(e);
-    }
-  };
+  // const infoApi = async () => {
+  //   try {
+  //     const { data } = await axios.get(API_URL);
 
-  React.useEffect(() => {
-    infoApi();
-  }, []);
+  //     // setarCar(data);
+  //     // setCars(data);
+  //   } catch (e) {
+  //     console.log(e);
+  //   }
+  // };
 
   let [ordeno, setordeno] = useState("Ascending");
   let [indexo, setindexo] = useState("Brand");

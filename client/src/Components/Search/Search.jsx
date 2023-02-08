@@ -1,33 +1,21 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import axios from "axios";
+import { useDispatch } from "react-redux";
+import { getCarByLocation } from "../../redux/actions/actions";
 
 function Search() {
-  const [location, setLocation] = useState([]);
-  const [search, setSearch] = useState("");
-
-  const API_URL = "http://localhost:3001/cars";
-  const infoApi = async () => {
-    try {
-      const { data } = await axios.get(API_URL);
-      const result = data.filter((c) => c.location.includes(search));
-      setLocation(result);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  React.useEffect(() => {
-    infoApi();
-  }, []);
+  const dispatch = useDispatch();
+  const [location, setLocation] = useState("");
 
   function handleLocation(e) {
-    setSearch(e.target.value);
+    e.preventDefault();
+    setLocation(e.target.value);
     console.log(e.target.value);
   }
   function handleSubmit(e) {
     e.preventDefault();
-    setLocation(search);
+    dispatch(getCarByLocation(location));
+    setLocation("");
   }
 
   return (
@@ -36,12 +24,13 @@ function Search() {
         <form onSubmit={(e) => handleSubmit(e)}>
           <InputStyled
             type="text"
-            value={search}
+            autocomplete="on"
+            value={location}
             placeholder="Where do you need your car?"
             onChange={(e) => handleLocation(e)}
           />
 
-          <button>Search</button>
+          <button type="submit">Search</button>
         </form>
       </ContainerStyled>
     </React.Fragment>

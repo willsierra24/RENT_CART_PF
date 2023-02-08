@@ -1,9 +1,12 @@
-import { GET_ALL_CARS, GET_CAR_BY_ID } from '../actions/actions'
+import { GET_ALL_CARS, GET_CAR_BY_ID, GET_CAR_BY_LOCATION, POST_CAR, POST_ACCESSORIES,POST_USER, SEARCH } from '../actions/actions'
 
 const initialState = {
     cars: [],
+    accessories: [],
     allCars: [],
+    users: [],
     detailCar: {},
+    carLocation: [],
     search: ""
 }
 
@@ -21,6 +24,34 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
                 detailCar: action.payload
             }
+        case GET_CAR_BY_LOCATION:
+            return {
+                ...state,
+                carLocation: action.payload
+            }
+        case SEARCH:
+            let search = []
+            search = state.cars?.filter((c) => c.location.toLowerCase().includes(action.payload.toLowerCase()))
+            return {
+                ...state,
+                cars: search
+            }
+        case POST_CAR:
+            return {
+                ...state,
+                cars: [...state.cars, action.payload]
+            }
+        case POST_ACCESSORIES:
+            return {
+                ...state,
+                accessories: [...state.accessories, action.payload]
+            }
+        case POST_USER:
+            return {
+                ...state,
+                users: [...state.users, action.payload]
+            }
+
         default:
             return state
     }

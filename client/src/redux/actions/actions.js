@@ -1,13 +1,18 @@
 import axios from 'axios'
 export const GET_ALL_CARS = "GET_ALL_CARS"
 export const GET_CAR_BY_ID = "GET_CAR_BY_ID"
+export const GET_CAR_BY_LOCATION = "GET_CAR_BY_LOCATION"
+export const POST_CAR = "POST_CAR"
+export const POST_ACCESSORIES = "POST_ACCESSORIES"
+export const POST_USER = "POST_USER"
+export const SEARCH = "SEARCH"
 
-export const getAllCars = async (dispatch) => {
+export const getAllCars = () => async (dispatch) => {
   try {
-    const { data } = await axios.get("http://localhost:3001/cars")
+    const result = await axios.get("http://localhost:3001/cars")
     dispatch({
       type: "GET_ALL_CARS",
-      payload: data
+      payload: result.data
     })
   } catch (e) {
     console.log(e)
@@ -23,6 +28,63 @@ export const getCarById = (id) => async (dispatch) => {
     })
   } catch (e) {
     console.log(e)
+  }
+}
+
+export const getCarByLocation = (location) => async (dispatch) => {
+  try {
+    const { data } = await axios.get(`http://localhost:3001/cars?name=${location}`)
+    dispatch({
+      type: "GET_CAR_BY_LOCATION",
+      payload: data
+    })
+  } catch (e) {
+    console.log(e)
+  }
+}
+
+export const postCar = (payload) => async (dispatch) => {
+  try {
+    const carCreated = await axios.post("http://localhost:3001/cars", payload)
+    return dispatch({
+      type: "POST_CAR",
+      payload: carCreated
+    })
+
+  } catch (e) {
+    console.log(e)
+  }
+}
+
+export const postAccessories = (payload) => async (dispatch) => {
+  try {
+    const accessoriesCreated = await axios.post("http://localhost:3001/accessories", payload)
+    return dispatch({
+      type: "POST_ACCESSORIES",
+      payload: accessoriesCreated
+    })
+  } catch (e) {
+    console.log(e)
+  }
+}
+
+export const postUser = (payload) => async (dispatch) => {
+  try {
+    const userCreated = await axios.post("http://localhost:3001/users", payload)
+    return dispatch({
+      type: "POST_USER",
+      payload: userCreated
+    })
+  } catch (e) {
+    console.log(e)
+  }
+
+}
+
+export const setSearch = (payload) => {
+  return {
+    type: "SEARCH",
+    payload
   }
 }
 
