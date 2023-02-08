@@ -1,18 +1,20 @@
 import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import styled from "styled-components";
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, Link } from "react-router-dom";
 import { LoginButton } from "../Auth/Login";
 import { LogoutButton } from "../Auth/Logout";
 import { Profile } from "../Auth/Profile";
 import { Link } from "react-router-dom";
+
+
 
 function NavBar() {
   const {isAuthenticated} = useAuth0()
   return (
     <>
       <ContainerStyled>
-        <a >RENT CAR</a>
+        <Link to="/home">RENT CAR</Link>
         <NavStyled>
           <ListStyled to="/home">HOME</ListStyled>
           <ListStyled to="/about">ABOUT US</ListStyled>
