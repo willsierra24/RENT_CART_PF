@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { useDispatch } from "react-redux";
-import { getCarByLocation } from "../../redux/actions/actions";
+import { setSearch } from "../../redux/actions/actions";
 
 function Search() {
   const dispatch = useDispatch();
@@ -14,7 +14,7 @@ function Search() {
   }
   function handleSubmit(e) {
     e.preventDefault();
-    dispatch(getCarByLocation(location));
+    dispatch(setSearch(location));
     setLocation("");
   }
 

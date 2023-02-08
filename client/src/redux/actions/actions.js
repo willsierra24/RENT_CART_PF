@@ -1,7 +1,6 @@
 import axios from 'axios'
 export const GET_ALL_CARS = "GET_ALL_CARS"
 export const GET_CAR_BY_ID = "GET_CAR_BY_ID"
-export const GET_CAR_BY_LOCATION = "GET_CAR_BY_LOCATION"
 export const POST_CAR = "POST_CAR"
 export const POST_ACCESSORIES = "POST_ACCESSORIES"
 export const POST_USER = "POST_USER"
@@ -24,18 +23,6 @@ export const getCarById = (id) => async (dispatch) => {
     const { data } = await axios.get(`http://localhost:3001/cars/${id}`)
     dispatch({
       type: "GET_CAR_BY_ID",
-      payload: data
-    })
-  } catch (e) {
-    console.log(e)
-  }
-}
-
-export const getCarByLocation = (location) => async (dispatch) => {
-  try {
-    const { data } = await axios.get(`http://localhost:3001/cars?name=${location}`)
-    dispatch({
-      type: "GET_CAR_BY_LOCATION",
       payload: data
     })
   } catch (e) {
