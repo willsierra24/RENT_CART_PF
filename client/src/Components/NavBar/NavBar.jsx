@@ -6,9 +6,8 @@ import { LoginButton } from "../Auth/Login";
 import { LogoutButton } from "../Auth/Logout";
 import { Profile } from "../Auth/Profile";
 
-
 function NavBar() {
-  const {isAuthenticated} = useAuth0()
+  const { isAuthenticated } = useAuth0();
   return (
     <>
       <ContainerStyled>
@@ -17,12 +16,22 @@ function NavBar() {
           <ListStyled to="/home">HOME</ListStyled>
           <ListStyled to="/about">ABOUT US</ListStyled>
           <ListStyled to="/contact">CONTACT</ListStyled>
-          {isAuthenticated? <Link to={`/profile`}  className="link">
-         PROFILE
-        </Link>  : "" }
+          {isAuthenticated ? (
+            <Link to={`/profile`} className="link">
+              PROFILE
+            </Link>
+          ) : (
+            ""
+          )}
         </NavStyled>
-        {isAuthenticated? <> <LogoutButton></LogoutButton></>: <LoginButton></LoginButton> }
-
+        {isAuthenticated ? (
+          <>
+            {" "}
+            <LogoutButton></LogoutButton>
+          </>
+        ) : (
+          <LoginButton></LoginButton>
+        )}
       </ContainerStyled>
       <Outlet />
     </>

@@ -1,10 +1,12 @@
 const express = require("express");
 const userSchema = require("../Models/Users");
 const router = express.Router();
+const {validateCreate} = require('../Validators/Users.js');
 
 // Create user
 
 router.post("/", (req, res) => {
+  validateCreate
   const user = userSchema(req.body);
   user
     .save()
