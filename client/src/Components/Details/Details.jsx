@@ -22,17 +22,10 @@ export default function Details() {
             <p className="description">{state.category}</p>
           </div>
 
-<<<<<<< HEAD
-      <div className='feature'>
-      <h1 className='title'>Price: </h1>
-      <p className='description'>${state.price}/Day </p>  
-      </div>
-=======
           <div className="feature">
             <h1 className="title">Price: </h1>
             <p className="description">${state.price} /Day </p>
           </div>
->>>>>>> 7509488638cc35c478b60400972e755e468a643f
 
           <div className="feature">
             <h1 className="title">Description: </h1>
