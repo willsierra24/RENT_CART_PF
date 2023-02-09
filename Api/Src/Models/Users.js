@@ -50,7 +50,7 @@ const userSchema = mongoose.Schema({
   },
   roll: {
     type: String,
-    enum: ["admin", "user"],
+    enum: ["admin", "user", "superAdmin"],
     default: "user",
   },
   active: {
