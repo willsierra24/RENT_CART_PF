@@ -3,22 +3,24 @@ import { RiBarChart2Line, RiArrowRightLine } from "react-icons/ri";
 import { AiOutlinePoweroff } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
+//overflow-y-scroll
+
 function Sidebar() {
   const [showSubMenu, setShowSubMenu] = useState(false);
   return (
-    <div className="xl:h-[100vh] overflow-y-scroll fixed xl:static w-full h-full -left-full top-0 bg-secondary-100 p-4 flex flex-col justify-between ">
+    <div className="xl:h-[100vh]  fixed xl:static w-full h-full -left-full top-0 bg-secondary-100 p-4 flex flex-col justify-between ">
       <div>
-        <h1 className="text-center text-2xl font-bold text-white mb-10">
-          Admin<span className="text-primary text-4xl ">.</span>
+        <h1 className="text-center text-4xl font-bold text-white mb-10">
+          Rent <span className="text-primary  ">Cars</span>
         </h1>
         <ul>
           <li>
             <Link
               to="/"
-              className="py-2 px-4 borde-l border-gray-500 ml-6 block relative before:w-3 before:h-3 before:absolute before:bg-primary before:rounded-full before:-left-[6.5px] before:top-1/2 before:-translate-y-1/2 before.border-secondary-100 text-white"
+              className="py-2 px-4 borde-l border-gray-500 ml-6 block relative before:w-3 before:h-3 before:absolute before:bg-primary before:rounded-full before:-left-[6.5px] before:top-1/2 before:-translate-y-1/2 before.border-secondary-100 text-white rounded-lg  hover:bg-secondary-900"
             >
               <RiBarChart2Line className="text-primary" />
-              Seller
+              Bookings
             </Link>
           </li>
           <li>
@@ -38,25 +40,25 @@ function Sidebar() {
               <li>
                 <Link
                   to="/"
-                  className="py-2 px-4 borde-l border-gray-500 ml-6 block relative before:w-3 before:h-3 before:absolute before:bg-primary before:rounded-full before:-left-[6.5px] before:top-1/2 before:-translate-y-1/2 before:border-secondary-100 hover:text-white transition-colors"
+                  className="py-2 px-4 borde-l border-gray-500 ml-6 block relative before:w-3 before:h-3 before:absolute before:bg-primary before:rounded-full before:-left-[6.5px] before:top-1/2 before:-translate-y-1/2 before:border-secondary-100 hover:text-white transition-colors rounded-lg hover:bg-secondary-900"
                 >
-                  clientes
+                  clients
                 </Link>
               </li>
               <li>
                 <Link
                   to="/"
-                  className="py-2 px-4 borde-l border-gray-500 ml-6 block relative before:w-3 before:h-3 before:absolute before:bg-primary before:rounded-full before:-left-[6.5px] before:top-1/2 before:-translate-y-1/2 before:border-secondary-100 hover:text-white transition-colors"
+                  className="py-2 px-4 borde-l border-gray-500 ml-6 block relative before:w-3 before:h-3 before:absolute before:bg-primary before:rounded-full before:-left-[6.5px] before:top-1/2 before:-translate-y-1/2 before:border-secondary-100 hover:text-white transition-colors rounded-lg hover:bg-secondary-900"
                 >
-                  administradores
+                  admin
                 </Link>
               </li>
               <li>
                 <Link
                   to="/"
-                  className="py-2 px-4 borde-l border-gray-500 ml-6 block relative before:w-3 before:h-3 before:absolute before:bg-primary before:rounded-full before:-left-[6.5px] before:top-1/2 before:-translate-y-1/2 before:border-secondary-100 hover:text-white transition-colors"
+                  className="py-2 px-4 borde-l border-gray-500 ml-6 block relative before:w-3 before:h-3 before:absolute before:bg-primary before:rounded-full before:-left-[6.5px] before:top-1/2 before:-translate-y-1/2 before:border-secondary-100 hover:text-white transition-colors rounded-lg hover:bg-secondary-900"
                 >
-                  Super usuario
+                  Super admin{" "}
                 </Link>
               </li>
             </ul>
@@ -64,10 +66,19 @@ function Sidebar() {
           <li>
             <Link
               to="/"
-              className="py-2 px-4 borde-l border-gray-500 ml-6 block relative before:w-3 before:h-3 before:absolute before:bg-primary before:rounded-full before:-left-[6.5px] before:top-1/2 before:-translate-y-1/2 before:border-secondary-100 hover:text-white transition-colors"
+              className="py-2 px-4 borde-l border-gray-500 ml-6 block relative before:w-3 before:h-3 before:absolute before:bg-primary before:rounded-full before:-left-[6.5px] before:top-1/2 before:-translate-y-1/2 before:border-secondary-100 hover:text-white transition-colors rounded-lg hover:bg-secondary-900"
             >
               <RiBarChart2Line className="text-primary" />
-              Alquiler
+              Cars
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/"
+              className="py-2 px-4 borde-l border-gray-500 ml-6 block relative before:w-3 before:h-3 before:absolute before:bg-primary before:rounded-full before:-left-[6.5px] before:top-1/2 before:-translate-y-1/2 before:border-secondary-100 hover:text-white transition-colors rounded-lg hover:bg-secondary-900"
+            >
+              <RiBarChart2Line className="text-primary" />
+              Accesories
             </Link>
           </li>
         </ul>
