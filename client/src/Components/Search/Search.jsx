@@ -1,21 +1,33 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { useDispatch } from "react-redux";
-import { setSearch } from "../../redux/actions/actions";
+import axios from "axios";
 
 function Search() {
-  const dispatch = useDispatch();
-  const [location, setLocation] = useState("");
+  // const [cars, setCars] = useState([]);
+  const [search, setSearch] = useState("");
+
+  // const API_URL = "http://localhost:3001/cars";
+  // const infoApi = async () => {
+  //   try {
+  //     const data = await axios.get(API_URL);
+  //     console.log(data);
+  //     setCars(data);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
+
+  // React.useEffect(() => {
+  //   infoApi();
+  // }, []);
 
   function handleLocation(e) {
-    e.preventDefault();
-    setLocation(e.target.value);
+    setSearch(e.target.value);
     console.log(e.target.value);
   }
   function handleSubmit(e) {
     e.preventDefault();
-    dispatch(setSearch(location));
-    setLocation("");
+    setSearch(search);
   }
 
   return (
@@ -30,6 +42,13 @@ function Search() {
           />
 
           <ButtonStyled type="submit">SEARCH</ButtonStyled>
+            type="text"
+            value={search}
+            placeholder="¿Donde necesitas tu auto?"
+            onChange={(e) => handleLocation(e)}
+          />
+
+          <button>Buscar</button>
         </form>
       </ContainerStyled>
     </React.Fragment>

@@ -6,6 +6,9 @@ const { MONGODB } = require("./db");
 const router = require("./Src/Routes/Index");
 const cookieParser = require("cookie-parser");
 
+require("dotenv").config();
+
+const app = express();
 const port = process.env.PORT || 3001;
 require("dotenv").config();
 
@@ -25,7 +28,7 @@ app.use((_req, res, next) => {
   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
   next();
 });
-app.use(morgan("dev"));
+
 app.use("/", router);
 app.get("/", (req, res) => {
   res.status(200).send("Welcome to PF API");

@@ -14,13 +14,10 @@
     padding-left: 15px;
 =======
 .container1 {
-  position: absolute;
-  margin-top: 15%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  margin: 14%;
+  margin-top: 6%;
   background-color: rgb(255, 255, 255, 0.3);
-  color: rgba(7, 7, 7, 0.8);
+  color: #070707cc;
   /* border: 5px solid; */
   border-color: black;
   padding: 5px;
@@ -53,4 +50,51 @@
 .description {
   font-family: "RocknRoll One", sans-serif;
   display: inline;
+}
+.container1a{
+  margin: 5%;
+  margin-top: 0px;
+}
+.row1{
+  height: 320px;
+  display: grid;
+  grid-template-columns: 55% 40% 5%;
+}
+.row1colum2{
+  display: grid;
+  grid-template-rows: 23% 7% 7% 7% 7% 7% 7% 7% ;
+
+}
+.row2{
+  display: grid;
+  grid-template-columns:12% 19% 16% 11% 11% 16%  11%;
+  border: 1px solid #858585cc;
+  border-top: 0px solid #858585cc;    
+  border-left: 0px solid #858585cc;
+  border-right: 0px solid #858585cc;
+  align-items: center;
+}
+.row2 img{
+  width: 60px;
+  height: 50px;
+}
+#acceTittle{
+  color: #FF923C;
+  
+  border: 0px solid #858585cc;
+}
+.row2 div {
+  margin-right: 15px;
+}
+.listaccesori{
+  height: 216px;
+  overflow-y: scroll;
+}
+.butondetail{
+  display: flex;
+  justify-content: center;
+}
+.butondetail button {
+  display: flex;
+  justify-content: center;
 }

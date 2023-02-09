@@ -10,8 +10,8 @@ router.post("/", (req, res) => {
   const car = carSchema(req.body);
   car
     .save()
-    .then((data) => res.status(200).json(data))
-    .catch((error) => res.status(500).json({ message: `${error}` }));
+    .then((data) => res.json(data))
+    .catch((error) => res.json({ message: error }));
 });
 
 /* This is a get request that is being sent to the server. */
@@ -19,14 +19,7 @@ router.get("/", async (req, res) => {
   const { line } = req.query;
   const cars = await carSchema
     .find()
-    .populate("review", { description: 1, rate: 1, user: 1 })
-    .populate("billing", {
-      invoice_number: 1,
-      full_value: 1,
-      discount: 1,
-      user: 1,
-      accessories: 1,
-    });
+    .populate("review", { description: 1, rate: 1, user: 1 });
   try {
     if (line) {
       let carsLine = cars.filter((car) =>
@@ -49,8 +42,8 @@ router.get("/:id", (req, res) => {
   carSchema
     .findById(id)
     .populate("review", { description: 1, rate: 1 })
-    .then((data) => res.status(200).json(data))
-    .catch((error) => res.status(500).json({ message: `${error}` }));
+    .then((data) => res.json(data))
+    .catch((error) => res.json({ message: error }));
 });
 
 /* This is a put request that is being sent to the server. */
@@ -106,8 +99,8 @@ router.delete("/:id", (req, res) => {
   carSchema
     .updateOne({ _id: id }, { $set: { active } })
     .populate("review", { description: 1, rate: 1 })
-    .then((data) => res.status(200).json(data))
-    .catch((error) => res.status(500).json({ message: `${error} ` }));
+    .then((data) => res.json(data))
+    .catch((error) => res.json({ message: error }));
 });
 
 module.exports = router;
