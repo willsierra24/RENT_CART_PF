@@ -16,8 +16,8 @@ const accessoriesSchema = mongoose.Schema({
   description: {
     type: String,
     required: true,
-    minLength: 30,
-    maxLength: 500,
+    minLength: 10,
+    maxLength: 300,
   },
   image: {
     type: String,
@@ -33,7 +33,8 @@ const accessoriesSchema = mongoose.Schema({
   discount: {
     type: Number,
     default: 0,
-    maxLength: 99,
+    minLength: 1,
+    maxLength: 3
   },
   billing: {
     type: Array(mongoose.Types.ObjectId),
