@@ -1,21 +1,33 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { useDispatch } from "react-redux";
-import { setSearch } from "../../redux/actions/actions";
+import axios from "axios";
 
 function Search() {
-  const dispatch = useDispatch();
-  const [location, setLocation] = useState("");
+  // const [cars, setCars] = useState([]);
+  const [search, setSearch] = useState("");
+
+  // const API_URL = "http://localhost:3001/cars";
+  // const infoApi = async () => {
+  //   try {
+  //     const data = await axios.get(API_URL);
+  //     console.log(data);
+  //     setCars(data);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
+
+  // React.useEffect(() => {
+  //   infoApi();
+  // }, []);
 
   function handleLocation(e) {
-    e.preventDefault();
-    setLocation(e.target.value);
+    setSearch(e.target.value);
     console.log(e.target.value);
   }
   function handleSubmit(e) {
     e.preventDefault();
-    dispatch(setSearch(location));
-    setLocation("");
+    setSearch(search);
   }
 
   return (
@@ -23,14 +35,20 @@ function Search() {
       <ContainerStyled>
         <form onSubmit={(e) => handleSubmit(e)}>
           <InputStyled
-            type="text"
-            autocomplete="on"
+            type="search"
             value={location}
             placeholder="Where do you need your car?"
             onChange={(e) => handleLocation(e)}
           />
 
-          <button type="submit">Search</button>
+          <ButtonStyled type="submit">SEARCH</ButtonStyled>
+            type="text"
+            value={search}
+            placeholder="¿Donde necesitas tu auto?"
+            onChange={(e) => handleLocation(e)}
+          />
+
+          <button>Buscar</button>
         </form>
       </ContainerStyled>
     </React.Fragment>
@@ -52,5 +70,20 @@ export const InputStyled = styled.input`
   padding: 8px;
   outline: none;
   color: black;
+`;
+
+export const ButtonStyled = styled.button`
+  background-color: #ffb703;
+  border-radius: 7px;
+  padding: 10px;
+  border: none;
+  color: #023047;
+  font-weight: bold;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #219ebc;
+    color: #fff;
+  }
 `;
 export default Search;
