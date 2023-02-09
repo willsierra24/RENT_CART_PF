@@ -4,7 +4,7 @@ const userRoutes = require("./Src/Routes/Users");
 const reviewRoutes = require("./Src/Routes/Review");
 const router = require("./Src/Routes/Index");
 require("dotenv").config();
-
+const morgan = require("morgan");
 const app = express();
 const port = process.env.PORT || 3001;
 
@@ -21,7 +21,7 @@ app.use((_req, res, next) => {
   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
   next();
 });
-
+app.use(morgan("dev"));
 app.use("/", router);
 app.get("/", (req, res) => {
   res.send("Welcome to PF API");
