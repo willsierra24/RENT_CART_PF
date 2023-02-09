@@ -3,11 +3,17 @@ const reviewAccessoriesSchema = require("../Models/ReviewAccessories");
 const Users = require("../Models/Users");
 
 const router = express.Router();
+const {validateCreate} = require('../Validators/ReviewAccessories.js');
 
 /* This is a post request that is going to create a new review. */
 router.post("/", async (req, res) => {
   const review = reviewAccessoriesSchema(req.body);
   const user = await Users.findById(review.user);
+  validateCreate
+  try {
+    const review = reviewAccessoriesSchema(req.body);
+    const user = await Users.findById(review.user);
+    const accessories = await Accessories.findById(review.user);
 
   const newReview = new ReviewAccessories({
     description: review.description,

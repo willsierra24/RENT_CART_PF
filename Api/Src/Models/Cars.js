@@ -65,7 +65,7 @@ const carSchema = mongoose.Schema({
     type: Number,
     default: 0,
     minLength: 0,
-    maxLength: 99,
+    maxLength: 3,
   },
   doors: {
     type: Number,
