@@ -8,7 +8,7 @@ const accessoriesSchema = mongoose.Schema({
     minLength: 3,
     maxLength: 50,
   },
-  preci: {
+  price: {
     type: Number,
     required: true,
     minLength: 1,
@@ -35,7 +35,12 @@ const accessoriesSchema = mongoose.Schema({
     default: 0,
     maxLength: 99,
   },
-  review: [
+  billing: {
+    type: Array(mongoose.Types.ObjectId),
+    ref: "Billings",
+  },
+
+  reviewAccesories: [
     {
       type: mongoose.Types.ObjectId,
       ref: "ReviewAccessories",
@@ -43,4 +48,4 @@ const accessoriesSchema = mongoose.Schema({
   ],
 });
 
-module.exports = mongoose.model("Accesories", accessoriesSchema);
+module.exports = mongoose.model("Accessories", accessoriesSchema);
