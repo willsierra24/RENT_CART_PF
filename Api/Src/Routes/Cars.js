@@ -2,9 +2,11 @@ const express = require("express");
 const carSchema = require("../Models/Cars");
 const Users = require("../Models/Users");
 const router = express.Router();
+const {validateCreate} = require('../Validators/Cars.js');
 
 /* This is a post request that is being sent to the server. */
 router.post("/", (req, res) => {
+  validateCreate
   const car = carSchema(req.body);
   car
     .save()

@@ -1,9 +1,12 @@
 const express = require("express");
 const accessoriesSchema = require("../Models/Accessories");
 const router = express.Router();
+const {validateCreate} = require('../Validators/Accessories.js');
+
 
 /* This is a post request that is saving the data to the database. */
 router.post("/", (req, res) => {
+  validateCreate
   const accessories = accessoriesSchema(req.body);
   accessories
     .save()

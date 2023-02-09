@@ -4,9 +4,11 @@ const Users = require("../Models/Users");
 const Cars = require("../Models/Cars");
 const Review = require("../Models/Review");
 const router = express.Router();
+const {validateCreate} = require('../Validators/Review.js');
 
 /* This is a post request that is going to create a new review. */
 router.post("/", async (req, res) => {
+  validateCreate
   const review = reviewSchema(req.body);
   const user = await Users.findById(review.user);
   const car = await Cars.findById(review.car);

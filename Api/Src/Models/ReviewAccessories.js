@@ -3,18 +3,17 @@ const reviewAccessoriesSchema = mongoose.Schema({
   description: {
     type: String,
     minLength: 10,
-    maxLength: 250,
+    maxLength: 500,
   },
   rate: {
     type: Number,
-    minLength: 0,
-    maxLength: 5,
+    min: 0,
+    max: 5,
   },
   user: {
     type: mongoose.Types.ObjectId,
     ref: "Users",
   },
-
   active: {
     type: String,
     enum: ["valid", "invalid"],
