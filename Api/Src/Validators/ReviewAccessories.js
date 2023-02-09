@@ -19,6 +19,10 @@ const validateCreate = [
         .exists()
         .withMessage("You must enter a user")
         .not(),
+    check('accessories')
+        .exists()
+        .not()
+        .withMessage("You must enter a accessories"),
     check('active')
         .exists()
         .not()
