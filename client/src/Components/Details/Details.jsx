@@ -22,7 +22,7 @@ const {state} = useLocation();
 
       <div className='feature'>
       <h1 className='title'>Price: </h1>
-      <p className='description'>${state.preci}/Day </p>  
+      <p className='description'>${state.price}/Day </p>  
       </div>
 
       <div className='feature'>
