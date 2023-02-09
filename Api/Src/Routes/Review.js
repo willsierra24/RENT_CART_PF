@@ -8,6 +8,9 @@ const {validateCreate} = require('../Validators/Review.js');
 
 /* This is a post request that is going to create a new review. */
 router.post("/", async (req, res) => {
+  const review = reviewSchema(req.body);
+  const user = await Users.findById(review.user);
+  const car = await Cars.findById(review.car);
   validateCreate
   const review = reviewSchema(req.body);
   const user = await Users.findById(review.user);
@@ -25,40 +28,39 @@ router.post("/", async (req, res) => {
     const user = await Users.findById(review.user);
     const car = await Cars.findById(review.car);
 
-    const newReview = new Review({
-      description: review.description,
-      rate: review.rate,
-      user: user._id,
-      car: car._id,
-    });
+  const newReview = new Review({
+    description: review.description,
+    rate: review.rate,
+    user: user._id,
+    car: car._id,
+  });
 
+  try {
     const saveReview = await newReview.save();
+    console.log(saveReview);
     user.review = user.review.concat(saveReview._id);
     await user.save();
     car.review = car.review.concat(saveReview._id);
     await car.save();
-    res.status(200).json(saveReview);
+    res.json(saveReview);
   } catch (error) {
-    res.status(500).send({ messaje: `${error}` });
+    res.send({ messaje: error });
   }
 });
 
 /* This is a get request that is going to get all the reviews. */
 router.get("/", async (req, res) => {
-  try {
-    const review = await Review.find({})
-      .populate("user", {
-        name: 1,
-        lastName: 1,
-        eMail: 1,
-        telephone: 1,
-        dni: 1,
-      })
-      .populate("car", { licensePlate: 1, line: 1 });
-    res.status(200).json(review);
-  } catch (error) {
-    res.status(500).send({ messaje: `${error}` });
-  }
+  const review = await Review.find({})
+    .populate("user", {
+      name: 1,
+      lastName: 1,
+      eMail: 1,
+      telephone: 1,
+      licensePlate: 1,
+      line: 1,
+    })
+    .populate("car", { licensePlate: 1, line: 1 });
+  res.json(review);
 });
 
 /* This is a get request that is going to get a review by id. */
@@ -73,7 +75,7 @@ router.get("/:id", (req, res) => {
       telephone: 1,
     })
     .then((data) => res.json(data))
-    .catch((error) => res.status(500).send({ messaje: `${error}` }));
+    .catch((error) => res.json({ message: error }));
 });
 
 /* This is a put request that is going to update a review by id. */
@@ -88,8 +90,8 @@ router.put("/:id", (req, res) => {
       eMail: 1,
       telephone: 1,
     })
-    .then((data) => res.status(200).json(data))
-    .catch((error) => res.status(500).send({ messaje: `${error}` }));
+    .then((data) => res.json(data))
+    .catch((error) => res.json({ message: error }));
 });
 
 /* This is a delete request that is going to delete a review by id. */
@@ -104,8 +106,8 @@ router.delete("/:id", (req, res) => {
       eMail: 1,
       telephone: 1,
     })
-    .then((data) => res.status(200).json(data))
-    .catch((error) => res.status(500).send({ messaje: `${error}` }));
+    .then((data) => res.json(data))
+    .catch((error) => res.json({ message: error }));
 });
 
 module.exports = router;

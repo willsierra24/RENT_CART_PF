@@ -1,28 +1,43 @@
 import React from "react";
-import { useAuth0 } from "@auth0/auth0-react";
 import styled from "styled-components";
 import { NavLink, Outlet, Link } from "react-router-dom";
 import { LoginButton } from "../Auth/Login";
 import { LogoutButton } from "../Auth/Logout";
 import { Profile } from "../Auth/Profile";
 
+function NavBar() {
+  const { isAuthenticated } = useAuth0();
+import { NavLink, Outlet } from "react-router-dom";
 
 function NavBar() {
-  const {isAuthenticated} = useAuth0()
   return (
     <>
       <ContainerStyled>
-        <Link to="/home">RENT CAR</Link>
+        <a >RENT CAR</a>
         <NavStyled>
+        
           <ListStyled to="/home">HOME</ListStyled>
           <ListStyled to="/about">ABOUT US</ListStyled>
           <ListStyled to="/contact">CONTACT</ListStyled>
-          {isAuthenticated? <Link to={`/profile`}  className="link">
-         PROFILE
-        </Link>  : "" }
+          {isAuthenticated ? (
+            <Link to={`/profile`} className="link">
+              PROFILE
+            </Link>
+          ) : (
+            ""
+          )}
         </NavStyled>
-        {isAuthenticated? <> <LogoutButton></LogoutButton></>: <LoginButton></LoginButton> }
-
+        {isAuthenticated ? (
+          <>
+            {" "}
+            <LogoutButton></LogoutButton>
+          </>
+        ) : (
+          <LoginButton></LoginButton>
+        )}
+        </NavStyled>
+        <button>LOGIN</button>
+          <ListStyled to="/shoping"><img src={"https://i.ibb.co/R9JyHsd/carrito.png"} alt="car" height="32px" /></ListStyled>
       </ContainerStyled>
       <Outlet />
     </>
