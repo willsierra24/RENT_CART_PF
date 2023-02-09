@@ -14,11 +14,21 @@ router.post("/", (req, res) => {
     .catch((error) => res.json({ message: error }));
 });
 
+/* This is a get request that is getting the data from the database. */
 router.get("/", async (req, res) => {
   const { name } = req.query;
   const accessories = await accessoriesSchema
     .find()
-    .populate("review", { description: 1, rate: 1, user: 1 });
+    .populate("reviewAccesories", { description: 1, rate: 1, user: 1 })
+    .populate("billing", {
+      invoice_number: 1,
+      full_value: 1,
+      discount: 1,
+      car: 1,
+      user: 1,
+      accessories: 1,
+    });
+
   try {
     if (name) {
       let accessorieName = accessories.filter((accessorie) =>

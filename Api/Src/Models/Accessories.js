@@ -36,7 +36,12 @@ const accessoriesSchema = mongoose.Schema({
     minLength: 1,
     maxLength: 3
   },
-  review: [
+  billing: {
+    type: Array(mongoose.Types.ObjectId),
+    ref: "Billings",
+  },
+
+  reviewAccesories: [
     {
       type: mongoose.Types.ObjectId,
       ref: "ReviewAccessories",

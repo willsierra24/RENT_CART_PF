@@ -14,22 +14,21 @@ router.post("/", (req, res) => {
     .catch((error) => res.json({ message: error }));
 });
 
-// get all users
-// router.get("/", (req, res) => {
-//   userSchema
-//     .find()
-//     .populate("review", { description: 1, rate: 1, car: 1 })
-//     .then((data) => res.json(data))
-//     .catch((error) => res.json({ message: error }));
-// });
-
 router.get("/", async (req, res) => {
-  const { dni } = req.query;
-
-  const users = await userSchema
-    .find()
-    .populate("review", { description: 1, rate: 1, car: 1 });
   try {
+    const { dni } = req.query;
+
+    const users = await userSchema
+      .find()
+      .populate("review", { description: 1, rate: 1, car: 1 })
+      .populate("reviewAccesories", { description: 1, rate: 1, accessories: 1 })
+      .populate("billing", {
+        invoice_number: 1,
+        full_value: 1,
+        discount: 1,
+        car: 1,
+        accessories: 1,
+      });
     if (dni) {
       let userDni = users.filter((user) => user.dni === Number(dni));
       userDni.length
@@ -39,7 +38,7 @@ router.get("/", async (req, res) => {
       res.status(200).json(users);
     }
   } catch (error) {
-    res.json(`Error ${error}`);
+    res.status(500).json(`Error ${error}`);
   }
 });
 
@@ -50,21 +49,32 @@ router.get("/:id", (req, res) => {
     .findById(id)
     .populate("review", { description: 1, rate: 1, car: 1 })
     .then((data) => res.json(data))
-    .catch((error) => res.json({ message: error }));
+    .catch((error) => res.json({ message: `${error} ` }));
 });
 
 // update a user
 router.put("/:id", (req, res) => {
   const { id } = req.params;
-  const { name, lastName, kindOfPerson, eMail, location, telephone } = req.body;
+  const { name, lastName, kindOfPerson, eMail, location, telephone, image } =
+    req.body;
   userSchema
     .updateOne(
       { _id: id },
-      { $set: { name, lastName, kindOfPerson, eMail, location, telephone } }
+      {
+        $set: {
+          name,
+          lastName,
+          kindOfPerson,
+          eMail,
+          location,
+          telephone,
+          image,
+        },
+      }
     )
     .populate("review", { description: 1, rate: 1 })
     .then((data) => res.json(data))
-    .catch((error) => res.json({ message: error }));
+    .catch((error) => res.status(500).json({ message: `${error} ` }));
 });
 
 // update a user
@@ -75,7 +85,7 @@ router.delete("/:id", (req, res) => {
     .updateOne({ _id: id }, { $set: { active } })
     .populate("review", { description: 1, rate: 1 })
     .then((data) => res.json(data))
-    .catch((error) => res.json({ message: error }));
+    .catch((error) => res.status(500).json({ message: `${error} ` }));
 });
 
 module.exports = router;

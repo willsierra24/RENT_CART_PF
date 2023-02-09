@@ -14,6 +14,13 @@ const reviewAccessoriesSchema = mongoose.Schema({
     type: mongoose.Types.ObjectId,
     ref: "Users",
   },
+  accessories: [
+    {
+      type: mongoose.Types.ObjectId,
+      ref: "Accessories",
+    },
+  ],
+
   active: {
     type: String,
     enum: ["valid", "invalid"],
