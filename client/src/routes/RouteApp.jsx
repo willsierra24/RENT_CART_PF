@@ -7,6 +7,7 @@ import LandingPage from "../Components/LandingPage/LandingPage";
 import Contact from "../pages/Contact/Contact";
 import FaqSection from "../pages/FaqSection/FaqSection";
 import Details from "../Components/Details/Details";
+import Shoping from "../Components/shoping/shoping";
 
 function RouteApp() {
   return (
@@ -18,6 +19,7 @@ function RouteApp() {
         <Route exact path="contact" element={<Contact />} />
         <Route exact path="faq" element={<FaqSection />} />
         <Route exact path="detail/:id" element={<Details />} />
+        <Route exact path="shoping" element={<Shoping />} />
 
         <Route exact path="*" element={<NotFound />} />
       </Routes>

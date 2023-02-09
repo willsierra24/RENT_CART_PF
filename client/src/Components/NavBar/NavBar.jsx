@@ -8,11 +8,13 @@ function NavBar() {
       <ContainerStyled>
         <a >RENT CAR</a>
         <NavStyled>
+        
           <ListStyled to="/home">HOME</ListStyled>
           <ListStyled to="/about">ABOUT US</ListStyled>
           <ListStyled to="/contact">CONTACT</ListStyled>
         </NavStyled>
         <button>LOGIN</button>
+          <ListStyled to="/shoping"><img src={"https://i.ibb.co/R9JyHsd/carrito.png"} alt="car" height="32px" /></ListStyled>
       </ContainerStyled>
       <Outlet />
     </>

@@ -1,0 +1,13 @@
+.containerShop {
+  margin: 6%;
+  background-color: rgb(255, 255, 255, 0.3);
+  color: #070707cc;
+  /* border: 5px solid; */
+  border-color: black;
+  padding: 5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding-left: 15px;
+}
+#shopTitle{
+  font-size: 200%;
+}
