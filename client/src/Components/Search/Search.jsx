@@ -35,6 +35,13 @@ function Search() {
       <ContainerStyled>
         <form onSubmit={(e) => handleSubmit(e)}>
           <InputStyled
+            type="search"
+            value={location}
+            placeholder="Where do you need your car?"
+            onChange={(e) => handleLocation(e)}
+          />
+
+          <ButtonStyled type="submit">SEARCH</ButtonStyled>
             type="text"
             value={search}
             placeholder="¿Donde necesitas tu auto?"
@@ -63,5 +70,20 @@ export const InputStyled = styled.input`
   padding: 8px;
   outline: none;
   color: black;
+`;
+
+export const ButtonStyled = styled.button`
+  background-color: #ffb703;
+  border-radius: 7px;
+  padding: 10px;
+  border: none;
+  color: #023047;
+  font-weight: bold;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #219ebc;
+    color: #fff;
+  }
 `;
 export default Search;
