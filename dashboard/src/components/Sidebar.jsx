@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import {
-  RiBarChart2Line,
+  RiLogoutCircleRLine,
   RiArrowRightLine,
   RiMenu3Line,
   RiCloseLine,
-  RiCarFill
+  RiCarFill,
 } from "react-icons/ri";
-import { AiOutlinePoweroff } from "react-icons/ai";
-import{FaUsers} from "react-icons/fa"
+import { GiCarSeat } from "react-icons/gi";
+import { FaUsers, FaShoppingCart } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 function Sidebar() {
@@ -23,7 +23,7 @@ function Sidebar() {
       >
         <div>
           <h1 className="text-center text-4xl font-bold text-white mb-10">
-            Rent <span className="text-primary  ">Cars.</span>
+            Rent <span className="text-primary  ">Car</span>
           </h1>
           <ul>
             <li>
@@ -31,8 +31,27 @@ function Sidebar() {
                 to="/"
                 className="flex text-2xl items-center gap-4  py-2 px-4 rounded-lg hover:bg-secondary-900 w-full"
               >
-                <RiBarChart2Line className="text-primary" />
+                <FaShoppingCart className="text-primary" />
                 Bookings
+              </Link>
+            </li>
+
+            <li>
+              <Link
+                to="/"
+                className="flex text-2xl items-center gap-4  py-2 px-4 rounded-lg hover:bg-secondary-900 w-full"
+              >
+                <RiCarFill className="text-primary" />
+                Cars
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/"
+                className="flex text-2xl items-center gap-4  py-2 px-4 rounded-lg hover:bg-secondary-900 w-full"
+              >
+                <GiCarSeat className="text-primary" />
+                Accessories
               </Link>
             </li>
             <li>
@@ -57,8 +76,8 @@ function Sidebar() {
                     className="py-2 px-4 border-l border-gray-500 ml-6 block relative
                    before:w-3 before:h-3 before:absolute before:bg-primary
                     before:rounded-full before:-left-[6.5px] before:top-1/2 before:-translate-y-1/2
-                     before:border-secondary-100 before:border-4 hover:text-white transition-colors 
-                     rounded-lg hover:bg-secondary-900"
+                     before:border-secondary-100 before:border-4 hover:text-primary transition-colors 
+                     rounded-lg hover:bg-secondary-900 text-lg"
                   >
                     Admin
                   </Link>
@@ -67,33 +86,15 @@ function Sidebar() {
                   <Link
                     to="/"
                     className="py-2 px-4 border-l border-gray-500 ml-6 block relative
-                   before:w-3 before:h-3 before:absolute before:bg-gray-500 before:rounded-full
+                   before:w-3 before:h-3 before:absolute before:bg-primary before:rounded-full
                     before:-left-[6.5px] before:top-1/2 before:-translate-y-1/2
-                     before:border-secondary-100 before:border-4 hover:text-white transition-colors 
-                     rounded-lg hover:bg-secondary-900 "
+                     before:border-secondary-100 before:border-4 hover:text-primary transition-colors 
+                     rounded-lg hover:bg-secondary-900 text-lg"
                   >
                     User
                   </Link>
                 </li>
               </ul>
-            </li>
-            <li>
-              <Link
-                to="/"
-                className="flex text-2xl items-center gap-4  py-2 px-4 rounded-lg hover:bg-secondary-900 w-full"
-              >
-                <RiCarFill className="text-primary" />
-                Cars
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/"
-                className="flex text-2xl items-center gap-4  py-2 px-4 rounded-lg hover:bg-secondary-900 w-full"
-              >
-                <RiBarChart2Line className="text-primary" />
-                Accesories
-              </Link>
             </li>
           </ul>
         </div>
@@ -102,7 +103,7 @@ function Sidebar() {
             to="/"
             className="flex text-2xl items-center gap-4 my-6 py-3 px-4 rounded-lg hover:bg-secondary-900 transition-colors"
           >
-            <AiOutlinePoweroff className="text-primary" />
+            <RiLogoutCircleRLine className="text-primary" />
             Log out
           </Link>
         </nav>
