@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import styled from "styled-components";
 import {
   RiLogoutCircleRLine,
   RiMenu3Line,
@@ -16,85 +17,138 @@ function Sidebar() {
   const [showMenu, setShowMenu] = useState(false);
   return (
     <>
-      <div
-        className={`xl:h-[100vh]  fixed xl:static w-[50%] md:w-[40%] lg:w-[30%] xl:w-auto h-full top-0 bg-secondary-100 p-4 flex flex-col justify-between z-50 ${
-          showMenu ? "left-0" : "-left-full"
-        } transition-all`}
-      >
+      <ContainerStyled>
         <div>
-          <h1 className="text-center text-4xl font-bold text-white mb-10">
-            Rent <span className="text-primary  ">Car</span>
-          </h1>
+          <TitleStyled>
+            <h1>
+              Rent <SpanStyled>Car</SpanStyled>
+            </h1>
+          </TitleStyled>
           <ul>
-            <li>
-              <Link
-                to="/"
-                className="flex text-2xl items-center gap-4  py-2 px-4 rounded-lg hover:bg-secondary-900 w-full"
-              >
-                <FaShoppingCart className="text-primary" />
-                My dates
-              </Link>
-            </li>
+            <ListStyled>
+              <ImagenStyled>
+                <FaShoppingCart />
+              </ImagenStyled>
+              <Link to="my-dates">MY DATES</Link>
+            </ListStyled>
 
-            <li>
-              <Link
-                to="/"
-                className="flex text-2xl items-center gap-4  py-2 px-4 rounded-lg hover:bg-secondary-900 w-full"
-              >
-                <RiCarFill className="text-primary" />
-                Booking
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/"
-                className="flex text-2xl items-center gap-4  py-2 px-4 rounded-lg hover:bg-secondary-900 w-full"
-              >
-                <GiCarSeat className="text-primary" />
-                Favorites
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/"
-                className="flex text-2xl items-center gap-4  py-2 px-4 rounded-lg hover:bg-secondary-900 w-full"
-              >
-                <FaUsers className="text-primary" />
-                Settings
-              </Link>
-            </li>
+            <ListStyled>
+              <ImagenStyled>
+                <FaShoppingCart />
+              </ImagenStyled>
+              <Link to="my-dates">BOOKINGS</Link>
+            </ListStyled>
 
-            <li>
-              <Link
-                to="/"
-                className="flex text-2xl items-center gap-4  py-2 px-4 rounded-lg hover:bg-secondary-900 w-full"
-              >
-                <RiHome7Fill className="text-primary" />
-                Back Home
-              </Link>
-            </li>
+            <ListStyled>
+              <ImagenStyled>
+                <FaShoppingCart />
+              </ImagenStyled>
+              <Link to="my-dates">FAVORITES</Link>
+            </ListStyled>
+
+            <ListStyled>
+              <ImagenStyled>
+                <FaShoppingCart />
+              </ImagenStyled>
+              <Link to="my-dates">SETTINGS</Link>
+            </ListStyled>
+            <ListStyled>
+              <ImagenStyled>
+                <FaShoppingCart />
+              </ImagenStyled>
+              <Link to="my-dates">OTHERS</Link>
+            </ListStyled>
           </ul>
         </div>
         <nav>
-          <div className="flex flex-col">
-            <Link
-              to="/"
-              className="flex text-2xl items-center gap-4 my-6 py-3 px-9 rounded-lg hover:bg-secondary-900 hover:text-white transition-colors bg-primary"
-            >
-              <RiLogoutCircleRLine className="text-white  " />
-              LOG OUT
-            </Link>
-          </div>
+          <LogOutStyled>
+            <ImagenLogStyled>
+              <RiLogoutCircleRLine />
+            </ImagenLogStyled>
+            <Link to="my-dates"> LOG OUT</Link>
+          </LogOutStyled>
         </nav>
-      </div>
-      <button
-        onClick={() => setShowMenu(!showMenu)}
-        className="fixed xl:hidden bottom-4 right-4 bg-primary text-black p-3 rounded-full z-50 "
-      >
-        {showMenu ? <RiCloseLine /> : <RiMenu3Line />}
-      </button>
+      </ContainerStyled>
     </>
   );
 }
 
+export const ContainerStyled = styled.div`
+  background-color: rgb(30 31 37);
+  margin-top: 41px;
+  position: static;
+  width: auto;
+  height: 100%;
+  top: 0px;
+  padding: 1rem /* 16px */;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  z-index: 50;
+  background-color: #1e1f25;
+`;
+export const TitleStyled = styled.div`
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 2.5rem /* 40px */;
+  color: white;
+`;
+export const SpanStyled = styled.span`
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 2.5rem /* 40px */;
+  color: #ffb703;
+`;
+
+export const ListStyled = styled.div`
+  display: flex;
+  font-size: 1.2rem /* 24px */;
+  line-height: 2rem /* 32px */;
+  align-items: center;
+  padding-top: 0.5rem /* 8px */;
+  padding-bottom: 0.5rem /* 8px */;
+  padding-left: 1.2rem /* 16px */;
+  padding-right: 1rem /* 16px */;
+  border-radius: 0.5rem /* 8px */;
+
+  &:hover {
+    --tw-bg-opacity: 1;
+    background-color: #131517;
+    color: white;
+  }
+`;
+
+export const ImagenStyled = styled.div`
+  display: flex;
+  color: #ffb703;
+  margin-right: 7px;
+  align-items: center;
+`;
+
+export const LogOutStyled = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding-top: 0.75rem;
+  padding-left: 2.25rem;
+  padding-right: 2.25rem;
+  color: white;
+
+  &:hover {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+    --tw-bg-opacity: 1;
+    background-color: rgb(19 21 23 / var(--tw-bg-opacity));
+    color: white;
+    border-radius: 0.5rem; /* 8px */
+  }
+`;
+export const ImagenLogStyled = styled.div`
+  display: flex;
+  color: #ffb703;
+  align-items: center;
+`;
 export default Sidebar;
