@@ -1,8 +1,9 @@
-import { GET_ALL_CARS, GET_CAR_BY_ID, POST_CAR, POST_ACCESSORIES, POST_USER, SEARCH } from '../actions/actions'
+import { GET_ALL_CARS, GET_CAR_BY_ID, POST_CAR, POST_ACCESSORIES, POST_USER, SEARCH,GET_ALL_ACCESSORIES } from '../actions/actions'
 
 const initialState = {
     cars: [],
     accessories: [],
+    allaccessories:[],
     allCars: [],
     users: [],
     detailCar: {},
@@ -18,6 +19,14 @@ const rootReducer = (state = initialState, action) => {
                 cars: action.payload,
                 allCars: action.payoad
             }
+
+        case GET_ALL_ACCESSORIES:
+            return {
+                ...state,
+                allaccessories: action.payload,
+            }
+
+            
         case GET_CAR_BY_ID:
             return {
                 ...state,

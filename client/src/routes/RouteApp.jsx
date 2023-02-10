@@ -7,6 +7,7 @@ import LandingPage from "../Components/LandingPage/LandingPage";
 import Contact from "../pages/Contact/Contact";
 import FaqSection from "../pages/FaqSection/FaqSection";
 import Details from "../Components/Details/Details";
+import Shopping from "../Components/Shopping/shoping";
 import { Profile } from "../Components/Auth/Profile";
 
 function RouteApp() {
@@ -20,6 +21,7 @@ function RouteApp() {
         <Route exact path="faq" element={<FaqSection />} />
         <Route exact path="detail/:id" element={<Details />} />
         <Route exact path="profile" element={<Profile />} />
+        <Route exact path="shopping" element={<Shopping />} /> 
 
         <Route exact path="*" element={<NotFound />} />
       </Routes>
