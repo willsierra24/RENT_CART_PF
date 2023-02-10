@@ -1,0 +1,61 @@
+form {
+  margin: 0 auto;
+  text-align: left;
+}
+
+Form {
+  background-color: rgb(28, 30, 34);
+  max-width: 400px;
+  margin: 1em auto;
+  padding: 3em;
+  border-radius: 7px;
+  border: 3px solid rgb(255, 255, 255);
+  box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.808);
+  
+ 
+}
+Form > button {
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #2f51fa;
+  border: 1px solid black;
+  color: white;
+  font-weight: bold;
+  font-size: 1em;
+  transition: all 0.2s ease;
+  margin: 15px;
+}
+Form > button:hover {
+  cursor: pointer;
+  background-color: #2a45c8;
+  font-size: 1.1em;
+  transition: all 0.2s ease;
+}
+input[type="text"],
+input[type="number"],
+input[type="radio"],
+select {
+  font-size: 1em;
+  padding: 5px;
+  border-radius: 5px;
+  background: #ffffff;
+  border: 2px solid black;
+  outline: none;
+  margin: 8px 0;
+  color: #050504f2;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="radio"]:focus,
+select:focus {
+  border-color: #f73d93;
+}
+
+.error {
+  color: #eef431f2;
+  font-weight: lighter;
+  display: block;
+  text-align: right;
+}

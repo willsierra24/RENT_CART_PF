@@ -10,15 +10,22 @@ import ForgetPassword from "./pages/auth/ForgetPassword";
 import Home from "./pages/admin/Home";
 import Users from "./pages/admin/Users";
 import Error404 from "./pages/Error404";
+import { AccessorieForm } from "./components/Forms/AccessorieForm";
+import { CarForm } from "./components/Forms/CarForm";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/auth" element={<LayoutAuth />}>
+        {/* <Route exact path="/auth" element={<LayoutAuth />}>
           <Route index element={<Login />} />
           <Route path="register" element={<Register />} />
           <Route path="forget-password" element={<ForgetPassword />} />
+        </Route> */}
+        <Route exact path="/create" element={<LayoutAdmin />}>
+          <Route index element={<Home />} />
+          <Route path="car" element={<CarForm />} />
+          <Route path="accessorie" element={<AccessorieForm/>} />
         </Route>
         <Route path="/" element={<LayoutAdmin />}>
           <Route index element={<Home />} />
