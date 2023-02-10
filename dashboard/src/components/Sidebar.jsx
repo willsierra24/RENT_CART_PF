@@ -5,6 +5,7 @@ import {
   RiMenu3Line,
   RiCloseLine,
   RiCarFill,
+  RiHome7Fill,
 } from "react-icons/ri";
 import { GiCarSeat } from "react-icons/gi";
 import { FaUsers, FaShoppingCart } from "react-icons/fa";
@@ -96,16 +97,27 @@ function Sidebar() {
                 </li>
               </ul>
             </li>
+            <li>
+              <Link
+                to="/"
+                className="flex text-2xl items-center gap-4  py-2 px-4 rounded-lg hover:bg-secondary-900 w-full"
+              >
+                <RiHome7Fill className="text-primary" />
+                Back Home
+              </Link>
+            </li>
           </ul>
         </div>
         <nav>
-          <Link
-            to="/"
-            className="flex text-2xl items-center gap-4 my-6 py-3 px-4 rounded-lg hover:bg-secondary-900 transition-colors"
-          >
-            <RiLogoutCircleRLine className="text-primary" />
-            Log out
-          </Link>
+          <div className="flex flex-col">
+            <Link
+              to="/"
+              className="flex text-2xl items-center gap-4 my-6 py-3 px-9 rounded-lg hover:bg-secondary-900 hover:text-white transition-colors bg-primary"
+            >
+              <RiLogoutCircleRLine className="text-white  " />
+              LOG OUT
+            </Link>
+          </div>
         </nav>
       </div>
       <button
