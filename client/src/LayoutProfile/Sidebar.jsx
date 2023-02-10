@@ -1,62 +1,58 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
-import {
-  RiLogoutCircleRLine,
-  RiMenu3Line,
-  RiCloseLine,
-  RiCarFill,
-  RiHome7Fill,
-} from "react-icons/ri";
-import { GiCarSeat } from "react-icons/gi";
-import { FaUsers, FaShoppingCart } from "react-icons/fa";
+import { RiLogoutCircleRLine } from "react-icons/ri";
+import { MdOutlineFavorite, MdReviews } from "react-icons/md";
+import { FaUserAlt, FaShoppingCart } from "react-icons/fa";
+import { IoTicketSharp } from "react-icons/io5";
 import { Link } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
 
 function Sidebar() {
   //overflow-y-scroll
+  const { logout } = useAuth0();
 
-  const [showMenu, setShowMenu] = useState(false);
   return (
     <>
       <ContainerStyled>
         <div>
           <TitleStyled>
             <h1>
-              Rent <SpanStyled>Car</SpanStyled>
+              MY <SpanStyled>PROFILE</SpanStyled>
             </h1>
           </TitleStyled>
           <ul>
             <ListStyled>
               <ImagenStyled>
-                <FaShoppingCart />
+                <FaUserAlt />
               </ImagenStyled>
-              <Link to="my-dates">MY DATES</Link>
+              <Link to="my-dates">My dates</Link>
             </ListStyled>
 
             <ListStyled>
               <ImagenStyled>
                 <FaShoppingCart />
               </ImagenStyled>
-              <Link to="my-dates">BOOKINGS</Link>
+              <Link to="my-dates">Bookings</Link>
             </ListStyled>
 
             <ListStyled>
               <ImagenStyled>
-                <FaShoppingCart />
+                <MdOutlineFavorite />
               </ImagenStyled>
-              <Link to="my-dates">FAVORITES</Link>
+              <Link to="my-dates">Favorites</Link>
             </ListStyled>
 
             <ListStyled>
               <ImagenStyled>
-                <FaShoppingCart />
+                <MdReviews />
               </ImagenStyled>
-              <Link to="my-dates">SETTINGS</Link>
+              <Link to="my-dates">Reviews</Link>
             </ListStyled>
             <ListStyled>
               <ImagenStyled>
-                <FaShoppingCart />
+                <IoTicketSharp />
               </ImagenStyled>
-              <Link to="my-dates">OTHERS</Link>
+              <Link to="my-dates">Bills</Link>
             </ListStyled>
           </ul>
         </div>
@@ -65,7 +61,13 @@ function Sidebar() {
             <ImagenLogStyled>
               <RiLogoutCircleRLine />
             </ImagenLogStyled>
-            <Link to="my-dates"> LOG OUT</Link>
+            <Link
+              to="#"
+              onClick={() => logout({ returnTo: window.location.origin })}
+            >
+              {" "}
+              LOG OUT
+            </Link>
           </LogOutStyled>
         </nav>
       </ContainerStyled>
