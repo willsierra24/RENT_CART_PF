@@ -5,9 +5,11 @@ const Users = require("../Models/Users");
 const Billing = require("../Models/Billing");
 const billingSchema = require("../Models/Billing");
 const Accessories = require("../Models/Accessories");
+const {validateCreate} = require('../Validators/Billing.js');
 
 /* This is a post request that is looking for the billing information. */
 router.post("/", async (req, res) => {
+  validateCreate
   try {
     const billing = billingSchema(req.body);
     const user = await Users.findById(billing.user);
