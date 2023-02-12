@@ -2,9 +2,8 @@ import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import styled from "styled-components";
 import { NavLink, Outlet, Link } from "react-router-dom";
-import { LoginButton } from "../Auth/Login";
-import { LogoutButton } from "../Auth/Logout";
-import { Profile } from "../Auth/Profile";
+import { LoginButton } from "../Auth/LoginButton";
+import { LogoutButton } from "../Auth/LogoutButton";
 
 function NavBar() {
   const { isAuthenticated } = useAuth0();
@@ -27,10 +26,10 @@ function NavBar() {
         {isAuthenticated ? (
           <>
             {" "}
-            <LogoutButton></LogoutButton>
+            <LogoutButton />
           </>
         ) : (
-          <LoginButton></LoginButton>
+          <LoginButton />
         )}
       </ContainerStyled>
       <Outlet />
