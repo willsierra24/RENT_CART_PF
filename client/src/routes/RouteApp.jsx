@@ -19,8 +19,14 @@ import Register from "../Components/Auth/Register/Register";
 import ForgetPassword from "../Components/Auth/ForgetPassword/ForgetPassword";
 // Dashboard Admin
 import LayoutAdmin from "../LayoutAdmin/LayoutAdmin";
-import Homes from "../LayoutAdmin/pages/Homes";
-import Users from "../LayoutAdmin/pages/Users";
+import HomeAdmin from "../LayoutAdmin/pages/HomeAdmin";
+import UsersAdmin from "../LayoutAdmin/pages/UsersAdmin";
+import CarsAdmin from "../LayoutAdmin/pages/CarsAdmin";
+import BookingsAdmin from "../LayoutAdmin/pages/BookingsAdmin";
+import AccessoriesAdmin from "../LayoutAdmin/pages/AccessoriesAdmin";
+import LayoutAuth from "../LayoutAdmin/Auth/LayoutAuth";
+import LoginAdmin from "../LayoutAdmin/Auth/LoginAdmin";
+import ForgetPasswordAdmin from "../LayoutAdmin/Auth/ForgetPasswordAdmin";
 
 function RouteApp() {
   return (
@@ -44,10 +50,18 @@ function RouteApp() {
           <Route path="reviews" element={<Reviews />} />
         </Route>
         {/* Configuración de rutas del Dashboard */}
-        <Route path="/auth-admin" element={<LayoutAdmin />}>
-          <Route index element={<Homes />} />
-          <Route path="users" element={<Users />} />
+        <Route path="/auth" element={<LayoutAuth />}>
+          <Route index element={<LoginAdmin />} />
+          <Route path="recover-password" element={<ForgetPasswordAdmin />} />
         </Route>
+        <Route path="/auth-admin" element={<LayoutAdmin />}>
+          <Route index element={<HomeAdmin />} />
+          <Route path="users" element={<UsersAdmin />} />
+          <Route path="cars" element={<CarsAdmin />} />
+          <Route path="accessories" element={<AccessoriesAdmin />} />
+          <Route path="bookings" element={<BookingsAdmin />} />
+        </Route>
+
         {/* Configuración de ruta 404 error */}
         <Route exact path="*" element={<NotFound />} />
       </Routes>

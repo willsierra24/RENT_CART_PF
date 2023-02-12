@@ -121,7 +121,7 @@ function Sidebar() {
           <div className="flex flex-col">
             <Link
               to="/"
-              className="flex text-2xl items-center gap-4 my-6 py-3 px-9 rounded-lg hover:bg-secondary-900 hover:text-white transition-colors bg-primary"
+              className="flex text-2xl items-center gap-4 my-6 py-3 pl-5 rounded-lg hover:bg-secondary-900 hover:text-white transition-colors bg-primary"
             >
               <RiLogoutCircleRLine className="text-white  " />
               LOG OUT

@@ -18,7 +18,7 @@ function Sidebar() {
   return (
     <>
       <div
-        className={`xl:h-[100vh]  fixed xl:static w-[50%] md:w-[40%] lg:w-[30%] xl:w-auto h-full top-0 bg-secondary-100 p-4 flex flex-col justify-between z-50 ${
+        className={`xl:h-[100vh] mt-4 fixed xl:static w-[50%] md:w-[40%] lg:w-[30%] xl:w-auto h-full top-0 bg-secondary-100 p-4 flex flex-col justify-between z-50 ${
           showMenu ? "left-0" : "-left-full"
         } transition-all`}
       >
@@ -122,7 +122,7 @@ function Sidebar() {
             <Link
               to="#"
               onClick={() => logout({ returnTo: window.location.origin })}
-              className="flex text-2xl items-center gap-4 my-6 py-3 px-9 rounded-lg hover:bg-secondary-900 hover:text-white transition-colors bg-primary"
+              className="flex text-2xl items-center gap-4 my-20 py-3 pl-5 rounded-lg hover:bg-secondary-900 hover:text-white transition-colors bg-primary"
             >
               <RiLogoutCircleRLine className="text-white  " />
               LOG OUT
