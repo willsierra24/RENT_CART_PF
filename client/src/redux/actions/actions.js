@@ -5,6 +5,26 @@ export const POST_CAR = "POST_CAR"
 export const POST_ACCESSORIES = "POST_ACCESSORIES"
 export const POST_USER = "POST_USER"
 export const SEARCH = "SEARCH"
+export const GET_ALL_ACCESSORIES = "GET_ALL_ACCESSORIES"
+export const RESERVED = "RESERVED"
+
+
+
+
+export function getAllAccsessories () {
+  try {    
+      return function (dispatch) {
+        return fetch(`http://localhost:3001/accessories`)
+          .then(response => response.json())
+          .then(json => {
+            console.log(json, "esteeee");
+            dispatch({ type: "GET_ALL_ACCESSORIES", payload: json });
+          });
+      };
+  } catch (e) {
+    console.log(e)
+  }
+}
 
 export const getAllCars = () => async (dispatch) => {
   try {
