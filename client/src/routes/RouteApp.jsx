@@ -7,6 +7,7 @@ import LandingPage from "../Components/LandingPage/LandingPage";
 import Contact from "../pages/Contact/Contact";
 import FaqSection from "../pages/FaqSection/FaqSection";
 import Details from "../Components/Details/Details";
+import Shopping from "../Components/Shopping/shoping";
 //Dashboard perfil de usuario
 import LayoutProfile from "../LayoutProfile/LayoutProfile";
 import MyDates from "../LayoutProfile/pages/MyDates";
@@ -38,6 +39,7 @@ function RouteApp() {
         <Route exact path="contact" element={<Contact />} />
         <Route exact path="faq" element={<FaqSection />} />
         <Route exact path="detail/:id" element={<Details />} />
+        <Route exact path="shopping" element={<Shopping />} /> 
         {/* Configuración de rutas iniciar sesion */}
         <Route exact path="login" element={<Login />} />
         <Route exact path="register" element={<Register />} />
