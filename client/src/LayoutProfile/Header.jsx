@@ -16,7 +16,7 @@ function Header() {
 
   return (
     isAuthenticated && (
-      <header className="h-[7vh] md:h[10vh] border-b border-secondary-100 p-8 flex justify-end items-center mt-4">
+      <header className="h-[7vh] md:h[10vh] border-b border-secondary-100 p-8 flex justify-end items-center ">
         <nav className="flex items-center gap-x-2">
           <button className="items-center flex gap-x-2 hover:text-white ">
             <Link
