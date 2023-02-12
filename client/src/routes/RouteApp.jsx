@@ -7,6 +7,7 @@ import LandingPage from "../Components/LandingPage/LandingPage";
 import Contact from "../pages/Contact/Contact";
 import FaqSection from "../pages/FaqSection/FaqSection";
 import Details from "../Components/Details/Details";
+import Shopping from "../Components/Shopping/shoping";
 //Dashboard perfil de usuario
 import LayoutProfile from "../LayoutProfile/LayoutProfile";
 import MyDates from "../LayoutProfile/pages/MyDates";
@@ -27,10 +28,6 @@ import AccessoriesAdmin from "../LayoutAdmin/pages/AccessoriesAdmin";
 import LayoutAuth from "../LayoutAdmin/Auth/LayoutAuth";
 import LoginAdmin from "../LayoutAdmin/Auth/LoginAdmin";
 import ForgetPasswordAdmin from "../LayoutAdmin/Auth/ForgetPasswordAdmin";
-import MyDates from "../LayoutProfile/MyDates";
-import Bookings from "../LayoutProfile/Bookings";
-import Shopping from "../Components/Shopping/shoping";
-import { Profile } from "../Components/Auth/Profile";
 
 function RouteApp() {
   return (
@@ -42,6 +39,7 @@ function RouteApp() {
         <Route exact path="contact" element={<Contact />} />
         <Route exact path="faq" element={<FaqSection />} />
         <Route exact path="detail/:id" element={<Details />} />
+        <Route exact path="shopping" element={<Shopping />} /> 
         {/* Configuración de rutas iniciar sesion */}
         <Route exact path="login" element={<Login />} />
         <Route exact path="register" element={<Register />} />
@@ -65,8 +63,6 @@ function RouteApp() {
           <Route path="accessories" element={<AccessoriesAdmin />} />
           <Route path="bookings" element={<BookingsAdmin />} />
         </Route>
-        <Route exact path="profile" element={<Profile />} />
-        <Route exact path="shopping" element={<Shopping />} /> 
 
         {/* Configuración de ruta 404 error */}
         <Route exact path="*" element={<NotFound />} />
