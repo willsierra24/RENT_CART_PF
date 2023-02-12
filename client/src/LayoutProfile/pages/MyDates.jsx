@@ -1,7 +1,14 @@
 import React from "react";
 function MyDates() {
   return (
-    <h1>My dates</h1>
+    <div>
+      <p>Name: Isidoro Francisco Hilario</p>
+      <p>Email: ihilario00@gmai.com</p>
+      <p>Location:Cancún, Mexico</p>
+      
+
+
+    </div>
   );
 }
 
