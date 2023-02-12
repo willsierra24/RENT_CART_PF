@@ -1,41 +1,45 @@
+import React from "react";
 import { Outlet } from "react-router-dom";
 import Sidebar from "./Sidebar";
 import Header from "./Header";
+import { useAuth0 } from "@auth0/auth0-react";
+import NotFound from "../pages/NotFound/NotFound";
 import NavBar from "../Components/NavBar/NavBar";
 import Footer from "../Components/Footer/Footer";
-import styled from "styled-components";
 
 function LayoutProfile() {
+  const { isAuthenticated, isLoading } = useAuth0();
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
   //overflow-y-scroll
   return (
-    <>
-      <NavBar />
-      <ContainerStyled>
-        <Sidebar />
-        <ContenedorStyled>
-          <Header />
-          <OutletStyled>
-            <Outlet />
-          </OutletStyled>
-        </ContenedorStyled>
-      </ContainerStyled>
-      <Footer />
-    </>
+    <React.Fragment>
+      {isAuthenticated ? (
+        <>
+          <NavBar />
+          <div>
+            <div className="bg-secondary-900 min-h-screen grid  grid-cols-1 xl:grid-cols-6 mt-10">
+              <Sidebar />
+              <div className="xl:col-span-5">
+                <Header />
+                <div className="h-[90vh]  p-8">
+                  <Outlet />
+                </div>
+              </div>
+            </div>
+            <Footer />
+          </div>
+        </>
+      ) : (
+        <>
+          <NavBar />
+          <NotFound />
+          <Footer />
+        </>
+      )}
+    </React.Fragment>
   );
 }
-export const ContainerStyled = styled.div`
-  display: grid;
-  grid-template-columns: repeat(1, minmax(0, 1fr));
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  background-color: #131517;
-`;
-
-export const ContenedorStyled = styled.div`
-  grid-column: span 5 / span 5;
-`;
-
-export const OutletStyled = styled.div`
-  height: 90vh;
-  padding: 32px;
-`;
 export default LayoutProfile;

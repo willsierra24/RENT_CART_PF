@@ -29,7 +29,7 @@ function Sidebar() {
           <ul>
             <li>
               <Link
-                to="/"
+                to="bookings"
                 className="flex text-2xl items-center gap-4  py-2 px-4 rounded-lg hover:bg-secondary-900 w-full"
               >
                 <FaShoppingCart className="text-primary" />
@@ -39,7 +39,7 @@ function Sidebar() {
 
             <li>
               <Link
-                to="/"
+                to="cars"
                 className="flex text-2xl items-center gap-4  py-2 px-4 rounded-lg hover:bg-secondary-900 w-full"
               >
                 <RiCarFill className="text-primary" />
@@ -48,7 +48,7 @@ function Sidebar() {
             </li>
             <li>
               <Link
-                to="/"
+                to="accessories"
                 className="flex text-2xl items-center gap-4  py-2 px-4 rounded-lg hover:bg-secondary-900 w-full"
               >
                 <GiCarSeat className="text-primary" />
@@ -57,7 +57,7 @@ function Sidebar() {
             </li>
             <li>
               <Link
-                to="/"
+                to="users"
                 className="flex text-2xl items-center gap-4  py-2 px-4 rounded-lg hover:bg-secondary-900 w-full"
               >
                 <FaUsers className="text-primary" />
@@ -121,7 +121,7 @@ function Sidebar() {
           <div className="flex flex-col">
             <Link
               to="/"
-              className="flex text-2xl items-center gap-4 my-6 py-3 px-9 rounded-lg hover:bg-secondary-900 hover:text-white transition-colors bg-primary"
+              className="flex text-2xl items-center gap-4 my-6 py-3 pl-5 rounded-lg hover:bg-secondary-900 hover:text-white transition-colors bg-primary"
             >
               <RiLogoutCircleRLine className="text-white  " />
               LOG OUT
