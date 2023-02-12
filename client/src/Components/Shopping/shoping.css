@@ -1,5 +1,5 @@
 .ccontainer1 {
-  margin: 14%;
+  margin: 23%;
   margin-top: 6%;
   background-color: rgb(255, 255, 255, 0.3);
   color: #070707cc;
@@ -48,25 +48,34 @@
   grid-template-rows: 23% 7% 7% 7% 7% 7% 7% 7% ;
 
 }
-.crow2{
+.crow2tru, .crow2fal{
   display: grid;
-  grid-template-columns:15% 30% 13% 13% 13% 13%  13%;
+  grid-template-columns:60% 35% 25PX 25PX;
   border: 1px solid #858585cc;
   border-top: 0px solid #858585cc;    
   border-left: 0px solid #858585cc;
   border-right: 0px solid #858585cc;
   align-items: center;
 }
-.crow2 img{
-  width: 60px;
-  height: 50px;
+.crow2tru img, .crow2fal img{
+  width: 50px;
+  height: 40px;
 }
+.crow2tru div, .crow2fal div {
+  margin-right: 15px;
+}
+
+.crow2tru{
+  color: rgb(0, 0, 0);
+}
+.crow2fal{
+  color: rgb(187, 187, 187);
+}
+
+
 #cacceTittle{
   color: #FF923C;  
   border: 0px solid #858585cc;
-}
-.crow2 div {
-  margin-right: 15px;
 }
 .cbutondetail{
   display: flex;
@@ -85,29 +94,6 @@
 #csepara{
   width: 50%;
 }
-#cgray{
-  background-color: rgb(177, 34, 34);
-  width: 22px;
-  text-align: center;
-  color: white;
-  border-radius: 4px;
-  cursor: pointer;
-  display: grid;
-  grid-template-rows: 50% 50%;
-}
-#cgray2{
-  background-color: rgb(128, 128, 128);
-  width: 22px;
-  text-align: center;
-  color: white;
-  border-radius: 4px;
-  cursor: pointer;
-  display: grid;
-  grid-template-rows: 50% 50%;
-}
-#cgray:hover,#cgray2:hover{  
-  color: rgb(148, 148, 148);
-}
 #carButton{
   display: grid;
   grid-template-columns: 25% 50%;
@@ -117,4 +103,40 @@
   display: grid;
   grid-template-columns: 70% 30%;
   color: gray;
+}
+.mercadopago{
+  width: 500px;
+}
+.lafra{
+font-weight: normal;
+}
+.reservedTittle{
+  font-size: 200%;
+  font-weight: bold;
+}
+
+
+#carButton div{
+  width: 22px;
+  text-align: center;
+  color: white;
+  border-radius: 4px;
+  display: grid;
+  grid-template-rows: 50% 50%;
+  cursor: pointer;
+
+}
+.shoppingGroup p{
+  margin-top: -15px;
+}
+
+.shoppingTittle{
+  font-size: 110%;
+}
+.shoppingText{
+  font-size: 90%;
+  font-weight: normal;
+}
+#justi{
+  text-align: justify;
 }

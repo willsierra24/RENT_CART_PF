@@ -6,6 +6,10 @@ export const POST_ACCESSORIES = "POST_ACCESSORIES"
 export const POST_USER = "POST_USER"
 export const SEARCH = "SEARCH"
 export const GET_ALL_ACCESSORIES = "GET_ALL_ACCESSORIES"
+export const RESERVED = "RESERVED"
+
+
+
 
 export function getAllAccsessories () {
   try {    
