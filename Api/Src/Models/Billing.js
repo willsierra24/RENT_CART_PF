@@ -41,14 +41,32 @@ const billingSchema = mongoose.Schema({
     enum: ["valid", "invalid"],
     default: "valid",
   },
-  Deadline: {
+  Deadline_iso: {
     type: Date,
     required: true,
   },
-  rentalDate: {
+  rentalDate_iso: {
     type: Date,
     required: true,
   },
 });
+
+billingSchema
+  .virtual("rentalDate")
+  .set(function (date) {
+    this.rentalDate_iso = new Date(date);
+  })
+  .get(function () {
+    return this.rentalDate_iso.toISOString().substring(0, 10);
+  });
+
+billingSchema
+  .virtual("Deadline")
+  .set(function (date) {
+    this.Deadline_iso = new Date(date);
+  })
+  .get(function () {
+    return this.Deadline_iso.toISOString().substring(0, 10);
+  });
 
 module.exports = mongoose.model("Billings", billingSchema);

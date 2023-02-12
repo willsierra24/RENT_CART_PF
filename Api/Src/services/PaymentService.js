@@ -30,7 +30,7 @@ class PaymentService {
       },
     });
 
-    return payment.data;
+    return payment.data.init_point;
   }
 }
 

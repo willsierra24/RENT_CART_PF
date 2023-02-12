@@ -50,7 +50,7 @@ const userSchema = mongoose.Schema({
   },
   roll: {
     type: String,
-    enum: ["admin", "user", "superAdmin"],
+    enum: ["user", "admin", "superAdmin"],
     default: "user",
   },
   active: {
@@ -77,6 +77,26 @@ const userSchema = mongoose.Schema({
       ref: "Review",
     },
   ],
+  password: {
+    type: String,
+    required: true,
+  },
+
+  favorite: {
+    type: Array,
+  },
+
+  loading: {
+    type: String,
+    enum: ["valid", "invalid"],
+    default: "invalid",
+  },
 });
 
 module.exports = mongoose.model("Users", userSchema);
+
+//admin nombre apellido email password
+// incriptar password
+// password para user
+// hacer el pdf mero capricho
+// mercado pago
