@@ -1,9 +1,12 @@
 const express = require("express");
 const accessoriesSchema = require("../Models/Accessories");
 const router = express.Router();
+const {validateCreate} = require('../Validators/Accessories.js');
+
 
 /* This is a post request that is saving the data to the database. */
 router.post("/", (req, res) => {
+  validateCreate
   const accessories = accessoriesSchema(req.body);
   accessories
     .save()
@@ -16,7 +19,16 @@ router.get("/", async (req, res) => {
   const { name } = req.query;
   const accessories = await accessoriesSchema
     .find()
-    .populate("review", { description: 1, rate: 1, user: 1 });
+    .populate("reviewAccesories", { description: 1, rate: 1, user: 1 })
+    .populate("billing", {
+      invoice_number: 1,
+      full_value: 1,
+      discount: 1,
+      car: 1,
+      user: 1,
+      accessories: 1,
+    });
+
   try {
     if (name) {
       let accessorieName = accessories.filter((accessorie) =>

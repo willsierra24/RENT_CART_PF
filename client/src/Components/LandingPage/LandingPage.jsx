@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./LandingPage.css";
 
 export default function LandingPage() {
+  localStorage.setItem ('nombre',"")
   return (
     <div className="information">
       <div class="container">

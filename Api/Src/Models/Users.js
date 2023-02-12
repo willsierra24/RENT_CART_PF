@@ -8,6 +8,11 @@ const userSchema = mongoose.Schema({
     minLength: 3,
     maxLength: 50,
   },
+  image: {
+    type: String,
+    required: true,
+    default: "http://cdn.onlinewebfonts.com/svg/img_141364.png",
+  },
   lastName: {
     type: String,
     required: true,
@@ -19,7 +24,7 @@ const userSchema = mongoose.Schema({
     require: true,
     unique: true,
     minLength: 7,
-    maxLength:10
+    maxLength: 10,
   },
   kindOfPerson: {
     type: String,
@@ -41,35 +46,35 @@ const userSchema = mongoose.Schema({
     type: String,
     required: true,
     unique: true,
-    minLength: 10,
+    minLength: 9,
   },
   roll: {
     type: String,
-    enum: ["admin", "user"],
+    enum: ["admin", "user", "superAdmin"],
     default: "user",
-  },
-  dni: {
-    type: Number,
-    require: true,
-    unique: true,
-    minLength: 7,
-    maxLength: 10,
   },
   active: {
     type: String,
     enum: ["valid", "invalid"],
     default: "valid",
   },
-  review: [
+  billing: [
     {
       type: mongoose.Types.ObjectId,
-      ref: "Review",
+      ref: "Billings",
     },
   ],
   reviewAccesories: [
     {
       type: mongoose.Types.ObjectId,
       ref: "ReviewAccessories",
+    },
+  ],
+
+  review: [
+    {
+      type: mongoose.Types.ObjectId,
+      ref: "Review",
     },
   ],
 });
