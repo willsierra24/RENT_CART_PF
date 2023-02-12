@@ -34,7 +34,7 @@ const accessoriesSchema = mongoose.Schema({
     type: Number,
     default: 0,
     minLength: 1,
-    maxLength: 3
+    maxLength: 3,
   },
   billing: {
     type: Array(mongoose.Types.ObjectId),
@@ -47,6 +47,12 @@ const accessoriesSchema = mongoose.Schema({
       ref: "ReviewAccessories",
     },
   ],
+
+  quantity: {
+    type: Number,
+    required: true,
+    default: 1,
+  },
 });
 
 module.exports = mongoose.model("Accessories", accessoriesSchema);
