@@ -18,7 +18,7 @@ function Login() {
   return (
     <React.Fragment>
       <NavBar />
-      <div className="mt-[90px] mr-10 flex justify-end items-center ">
+      <div className="mt-[90px] mr-10 flex justify-end items-center mb-[30px]  ">
         <div className="bg-secondary-100 p-8 rounded-xl  w-auto lg:w-[450px]">
           <h1 className="text-center text-3xl uppercase font-bold tracking-[5px] text-white mb-8">
             Sign <span className="text-primary">in</span>
