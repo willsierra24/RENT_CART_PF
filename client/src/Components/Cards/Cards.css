@@ -11,3 +11,11 @@
     margin: 10px;
     color: #003566;
 }
+
+.loading{
+    display:flex;
+    width:900px;   
+    justify-content:center;
+    margin-top:30px
+
+}
