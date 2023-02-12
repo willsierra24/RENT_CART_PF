@@ -29,7 +29,7 @@ function Sidebar() {
           <ul>
             <li>
               <Link
-                to="#"
+                to="my-dates"
                 className="flex text-2xl items-center gap-4  py-2 px-4 rounded-lg hover:bg-secondary-900 w-full"
               >
                 <FaUserAlt className="text-primary" />
