@@ -10,6 +10,7 @@
     text-shadow: 7px 4px 5px #feffff;
     color: #023047;
     font-size: 47px;
+    margin-bottom:20px;
 }
 
 .button {
@@ -17,6 +18,7 @@
     border: none;
     color: white;
     padding: 6px 20px;
+    margin-bottom:15px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
