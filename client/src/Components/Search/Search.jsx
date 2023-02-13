@@ -23,14 +23,13 @@ function Search() {
       <ContainerStyled>
         <form onSubmit={(e) => handleSubmit(e)}>
           <InputStyled
-            type="text"
-            autocomplete="on"
+            type="search"
             value={location}
             placeholder="Where do you need your car?"
             onChange={(e) => handleLocation(e)}
           />
 
-          <button type="submit">Search</button>
+          <ButtonStyled type="submit">SEARCH</ButtonStyled>
         </form>
       </ContainerStyled>
     </React.Fragment>
@@ -40,7 +39,7 @@ function Search() {
 export const ContainerStyled = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 70px;
+  margin-top: 100px;
 `;
 
 export const InputStyled = styled.input`
@@ -52,5 +51,20 @@ export const InputStyled = styled.input`
   padding: 8px;
   outline: none;
   color: black;
+`;
+
+export const ButtonStyled = styled.button`
+  background-color: #ffb703;
+  border-radius: 7px;
+  padding: 10px;
+  border: none;
+  color: #023047;
+  font-weight: bold;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #219ebc;
+    color: #fff;
+  }
 `;
 export default Search;

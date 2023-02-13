@@ -15,8 +15,6 @@ router.post("/", async (req, res) => {
     const user = await Users.findById(billing.user);
     const car = await Cars.findById(billing.car);
 
-    console.log(`entrada ${billing.accessories}`);
-
     const newBilling = await new Billing({
       full_value: billing.full_value,
       discount: billing.discount,
@@ -25,7 +23,6 @@ router.post("/", async (req, res) => {
       car: car._id,
       accessories: billing.accessories,
     });
-    console.log(`billing ${newBilling}`);
 
     const saveBilling = await newBilling.save();
     user.billing = user.billing.concat(saveBilling._id);
@@ -37,9 +34,9 @@ router.post("/", async (req, res) => {
       accessories.billing = accessories.billing.concat(saveBilling._id);
       await accessories.save();
     });
-    res.json("successful billing");
+    res.status(200).json("successful billing");
   } catch (error) {
-    res.send(`{messaje: ${error}}`);
+    res.status(500).send(`{messaje: ${error}}`);
   }
 });
 

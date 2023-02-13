@@ -41,6 +41,20 @@ const billingSchema = mongoose.Schema({
     enum: ["valid", "invalid"],
     default: "valid",
   },
+
+  Deadline: {
+    type: Date,
+    required: true,
+  },
+
+  Deadline_iso: {
+    type: Date,
+    required: true,
+  },
+  rentalDate_iso: {
+    type: Date,
+    required: true,
+  },
 });
 
 module.exports = mongoose.model("Billings", billingSchema);
