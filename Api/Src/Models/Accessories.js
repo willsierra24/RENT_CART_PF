@@ -33,7 +33,12 @@ const accessoriesSchema = mongoose.Schema({
   discount: {
     type: Number,
     default: 0,
+<<<<<<< HEAD
     maxLength: 99,
+=======
+    minLength: 1,
+    maxLength: 3,
+>>>>>>> 07743a4fdb39d7e9a5758f3bcb8eb0cfa3afb5fd
   },
   review: [
     {
@@ -41,6 +46,12 @@ const accessoriesSchema = mongoose.Schema({
       ref: "ReviewAccessories",
     },
   ],
+
+  quantity: {
+    type: Number,
+    required: true,
+    default: 1,
+  },
 });
 
 module.exports = mongoose.model("Accesories", accessoriesSchema);

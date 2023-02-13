@@ -45,7 +45,11 @@ const userSchema = mongoose.Schema({
   },
   roll: {
     type: String,
+
     enum: ["admin", "user", "superAdmin"],
+
+    enum: ["user", "admin", "superAdmin"],
+
     default: "user",
   },
   dni: {
@@ -72,6 +76,36 @@ const userSchema = mongoose.Schema({
       ref: "ReviewAccessories",
     },
   ],
+<<<<<<< HEAD
+=======
+
+  review: [
+    {
+      type: mongoose.Types.ObjectId,
+      ref: "Review",
+    },
+  ],
+  password: {
+    type: String,
+    required: true,
+  },
+
+  favorite: {
+    type: Array,
+  },
+
+  loading: {
+    type: String,
+    enum: ["valid", "invalid"],
+    default: "invalid",
+  },
+>>>>>>> 07743a4fdb39d7e9a5758f3bcb8eb0cfa3afb5fd
 });
 
 module.exports = mongoose.model("Users", userSchema);
+
+//admin nombre apellido email password
+// incriptar password
+// password para user
+// hacer el pdf mero capricho
+// mercado pago
