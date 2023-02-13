@@ -20,6 +20,7 @@
   padding: 5px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   padding-left: 15px;
+  padding-top:40px
 }
 
 .container2 {
@@ -29,18 +30,26 @@
 
 .brand {
   margin-bottom: 40px;
+  font-size: 30px;
+  color:#FB8500;
+  font-weight:900;
 }
 
 .feature {
   display: block;
   margin-right: 10px;
   margin-bottom: 20px;
+  margin-left:20px;
+  
 }
 
 .title {
   display: inline;
   font-family: "RocknRoll One", sans-serif;
   font-size: 20px;
+  color:#131517;
+  font-weight:bold;
+  
 }
 
 .description {
@@ -80,6 +89,8 @@
   border-left: 0px solid #858585cc;
   border-right: 0px solid #858585cc;
   align-items: center;
+  margin-bottom:15px;
+  
 }
 .row2 img{
   width: 60px;
@@ -104,6 +115,7 @@
   font-weight: normal;
   display: flex;
   align-items: flex-end;
+  
 }
 #separa{
   width: 50%;
@@ -114,6 +126,9 @@
 }
 #gray{
   color: #003566;
+  font-size:18px;
+  font-weight:bold;
+  
 }
 #gray,#black{  
   text-align: center;
@@ -123,4 +138,6 @@
 #gray2,#black2{  
   cursor: pointer;
   
+  
 }
+
