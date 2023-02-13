@@ -31,7 +31,7 @@ const validateCreate = [
         .exists()
         .withMessage("You must enter a eMail")
         .not()
-        .isString(),
+        .isEmail(),
     check('location')
         .exists()
         .not()
