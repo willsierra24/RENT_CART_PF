@@ -9,7 +9,9 @@
 }
 .tittleCar{
     margin: 10px;
-    color: #003566;
+    color: #5e768d;
+    font-size:25px;
+    font-weight:bold
 }
 
 .loading{
