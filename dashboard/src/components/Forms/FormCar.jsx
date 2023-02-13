@@ -28,8 +28,8 @@ export const FormCar = () => {
   const { handleSubmit, errors, touched, getFieldProps, handleChange, values } =
     useFormik({
       initialValues: {
-        licensePlate: "bla",
-        brand: "bla",
+        licensePlate: "",
+        brand: "",
         image: "",
         status: "valid",
         active: "valid",

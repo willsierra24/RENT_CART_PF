@@ -37,9 +37,9 @@ export const FormAccessory = () => {
   const { errors, touched, getFieldProps, values,setValues, handleChange, handleSubmit } =
     useFormik({
       initialValues: {
-        name: "bla",
+        name: "",
         price: 0,
-        description: "blablablabla",
+        description: "",
         image: "",
         status: "valid",
         discount: 0,
