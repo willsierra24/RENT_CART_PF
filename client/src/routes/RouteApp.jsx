@@ -39,14 +39,15 @@ function RouteApp() {
         <Route exact path="contact" element={<Contact />} />
         <Route exact path="faq" element={<FaqSection />} />
         <Route exact path="detail/:id" element={<Details />} />
-        <Route exact path="shopping" element={<Shopping />} /> 
+        <Route exact path="shopping" element={<Shopping />} />
         {/* Configuración de rutas iniciar sesion */}
         <Route exact path="login" element={<Login />} />
         <Route exact path="register" element={<Register />} />
         <Route exact path="recover-password" element={<ForgetPassword />} />
         {/* Configuración de rutas del perfil de usuario*/}
         <Route path="/profile" element={<LayoutProfile />}>
-          <Route index element={<MyDates />} />
+          {/* <Route index element={<MyDates />} /> */}
+          <Route path="my-dates" element={<MyDates />} />
           <Route path="bookings" element={<Bookings />} />
           <Route path="favorites" element={<Favorites />} />
           <Route path="reviews" element={<Reviews />} />
