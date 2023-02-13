@@ -12,13 +12,10 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^1.2.6",
-<<<<<<< HEAD
     "body-parser": "^1.20.1",
-=======
     "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
->>>>>>> 07743a4fdb39d7e9a5758f3bcb8eb0cfa3afb5fd
     "dotenv": "^16.0.3",
     "ejs": "^3.1.8",
     "express": "^4.18.2",
