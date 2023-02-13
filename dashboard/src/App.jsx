@@ -24,7 +24,7 @@ function App() {
           <Route path="forget-password" element={<ForgetPassword />} />
         </Route>
         <Route path="/create" element={<LayoutAdmin />}>
-          <Route path="users" element={<FormCar />} />
+          <Route path="car" element={<FormCar />} />
           <Route path="accessory" element={<FormAccessory />} />
         </Route>
         <Route path="/" element={<LayoutAdmin />}>
