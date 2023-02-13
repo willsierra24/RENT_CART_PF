@@ -16,11 +16,11 @@ export function MPButton() {
       });
       const data = await res.json();
 
-      if (data.global) {
+      if (data) {
         const script = document.createElement("script");
         script.type = "text/javascript";
         script.src = "https://sdk.mercadopago.com/js/v2";
-        script.setAttribute("data-preference-id", data.global);
+        script.setAttribute("data-preference-id", data.id);
         document.body.appendChild(script);
 
         const mp = new window.MercadoPago(
